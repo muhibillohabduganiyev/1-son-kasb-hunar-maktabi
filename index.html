@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-son Kasb-hunar Kolleji</title>
+    
+    <!-- Google Fonts: Saytimiz shriftlari chiroyli chiqishi uchun -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome: Saytdagi ikonkalarni (telefon, manzil, qidiruv) chiqarish uchun -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS faylimizni ulaymiz -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. HEADER: Navigatsiya (Menyu) qismi -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">1-SON <span>KOLLEJI</span></a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html" class="active">Bosh sahifa</a></li>
+                    <li><a href="#about">Biz haqimizda</a></li>
+                    <li><a href="#courses">Yo'nalishlar</a></li>
+                    <li><a href="#news">Yangiliklar</a></li>
+                    <li><a href="#contact">Aloqa</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+                <a href="#apply" class="btn-apply">Onlayn Ariza</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION: Birinchi ko'rinadigan qism (Katta banner) -->
+    <section class="hero">
+        <div class="container hero-wrapper">
+            <div class="hero-content">
+                <span class="badge">Kelajak kasbini biz bilan o'rganing!</span>
+                <h1>1-son Kasb-hunar Kollejiga Xush Kelibsiz!</h1>
+                <p>Zamonaviy ustaxonalar, malakali o'qituvchilar va amaliyotga yo'naltirilgan ta'lim tizimi. Biz bilan o'z sohangizning professionali bo'ling.</p>
+                <div class="hero-btns">
+                    <a href="#courses" class="btn-primary">Yo'nalishlarni ko'rish</a>
+                    <a href="#about" class="btn-secondary">Kollej bilan tanishish</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Bu yerga keyinchalik chiroyli illyustratsiya yoki rasm qo'yamiz -->
+                <div class="hero-circle-bg"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT SECTION: Biz haqimizda va Statistika -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-wrapper">
+                
+                <!-- Chap tomon: Matnli ma'lumotlar -->
+                <div class="about-content">
+                    <span class="section-badge">Kollejimiz haqida</span>
+                    <h2>Nima uchun aynan bizning kollejni tanlashadi?</h2>
+                    <p class="about-lead">1-son kasb-hunar kolleji ko'p yillik tajribaga ega, zamonaviy mehnat bozori talablariga mos kadrlar tayyorlaydigan yetakchi ta'lim muassasasidir.</p>
+                    <p>Bizda talabalar nafaqat nazariy bilimlar olishadi, balki eng so'nggi texnologiyalar bilan jihozlangan maxsus ustaxonalarda amaliy ko'nikmalarni shakllantirishadi. Bitiruvchilarimiz yetakchi korxona va tashkilotlarda o'z o'rinlariga ega bo'lmoqdalar.</p>
+                    
+                    <!-- Qulayliklar ro'yxati -->
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Xalqaro andozadagi diplom</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-tools"></i>
+                            <span>70% amaliyotga yo'naltirilgan darslar</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Ish bilan ta'minlash kafolati</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- O'ng tomon: Statistika kartalari (Grid) -->
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
+                        <h3>1200+</h3>
+                        <p>Muvaffaqiyatli bitiruvchilar</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <h3>45+</h3>
+                        <p>Malakali o'qituvchilar</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-book-reader"></i></div>
+                        <h3>12+</h3>
+                        <p>Zamonaviy kasb yo'nalishlari</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-building"></i></div>
+                        <h3>15+</h3>
+                        <p>Hamkor korxonalar</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. COURSES SECTION: Yo'nalishlar va Kasblar -->
+    <section id="courses" class="courses-section">
+        <div class="container">
+            
+            <!-- Bo'lim sarlavhasi -->
+            <div class="section-header">
+                <span class="section-badge">Mutaxassisliklar</span>
+                <h2>Bizda mavjud bo'lgan ta'lim yo'nalishlari</h2>
+                <p>Kollejimizda bugungi kunda mehnat bozorida eng yuqori maoshli va talabgir bo'lgan zamonaviy kasblar o'rgatiladi.</p>
+            </div>
+
+            <!-- Kasblar kartalari griddi (Grid) -->
+            <div class="courses-grid">
+                
+                <!-- 1-Karta: Dasturlash -->
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Axborot Texnologiyalari (Dasturlash)</h3>
+                    <p>Veb-saytlar va mobil ilovalar yaratish, ma'lumotlar bazasi hamda kompyuter tarmoqlari bilan ishlash asoslari.</p>
+                    <div class="course-footer">
+                        <span><i class="far fa-clock"></i> 2 yil</span>
+                        <span><i class="far fa-user"></i> Grant / Shartnoma</span>
+                    </div>
+                </div>
+
+                <!-- 2-Karta: Avtoslesar -->
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Avtomobillarni ta'mirlash chilangari</h3>
+                    <p>Zamonaviy yengil va yuk avtomobillarining dvigatel, elektr va mexanik qismlarini diagnostika va ta'mirlash.</p>
+                    <div class="course-footer">
+                        <span><i class="far fa-clock"></i> 2 yil</span>
+                        <span><i class="far fa-user"></i> Amaliy darslar</span>
+                    </div>
+                </div>
+
+                <!-- 3-Karta: Buxgalteriya -->
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Buxgalteriya va Audit</h3>
+                    <p>Korxona va tashkilotlarda moliyaviy hisobotlarni yuritish, soliq tizimi va 1C dasturida ishlash ko'nikmalari.</p>
+                    <div class="course-footer">
+                        <span><i class="far fa-clock"></i> 2 yil</span>
+                        <span><i class="far fa-user"></i> 1C Dasturi</span>
+                    </div>
+                </div>
+
+                <!-- 4-Karta: Tikuvchilik -->
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Tikuvchilik va Dizayn</h3>
+                    <p>Zamonaviy kiyimlarni modellashtirish, loyihalash, matolar bilan ishlash va professional tikuv uskunalaridan foydalanish.</p>
+                    <div class="course-footer">
+                        <span><i class="far fa-clock"></i> 2 yil</span>
+                        <span><i class="far fa-user"></i> Ijodiy ustaxona</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. NEWS SECTION: Yangiliklar va E'lonlar -->
+    <section id="news" class="news-section">
+        <div class="container">
+            
+            <!-- Bo'lim sarlavhasi -->
+            <div class="section-header">
+                <span class="section-badge">Maktab hayoti</span>
+                <h2>So'nggi yangiliklar va e'lonlar</h2>
+                <p>Kollejimizda sodir bo'layotgan eng so'nggi voqealar, tadbirlar va qabul jarayoniga oid muhim ma'lumotlardan boxabar bo'ling.</p>
+            </div>
+
+            <!-- Yangiliklar grid tizimi -->
+            <div class="news-grid">
+                
+                <!-- 1-Yangilik -->
+                <div class="news-card">
+                    <div class="news-image-placeholder">
+                        <span class="news-tag">E'lon</span>
+                        <div class="news-date">
+                            <span class="day">10</span>
+                            <span class="month">Iyun</span>
+                        </div>
+                    </div>
+                    <div class="news-body">
+                        <h3>2026-2027 o'quv yili uchun qabul jarayonlari boshlandi!</h3>
+                        <p>Kollejimizga hujjat topshirish istagida bo'lgan abituriyentlar uchun onlayn va oflayn qabul tizimi ishga tushirildi. Kerakli hujjatlar ro'yxati...</p>
+                        <a href="#" class="btn-read-more">Batafsil <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- 2-Yangilik -->
+                <div class="news-card">
+                    <div class="news-image-placeholder">
+                        <span class="news-tag/special">Tadbir</span>
+                        <div class="news-date">
+                            <span class="day">05</span>
+                            <span class="month">Iyun</span>
+                        </div>
+                    </div>
+                    <div class="news-body">
+                        <h3>"Eng yaxshi yosh dasturchi" ko'rik tanlovi bo'lib o'tdi</h3>
+                        <p>Kollejimizning Axborot Texnologiyalari yo'nalishi talabalari o'rtasida ichki chempionat o'tkazildi va g'oliblar qimmatbaho sovg'alar bilan taqdirlandi.</p>
+                        <a href="#" class="btn-read-more">Batafsil <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- 3-Yangilik -->
+                <div class="news-card">
+                    <div class="news-image-placeholder">
+                        <span class="news-tag">Hamkorlik</span>
+                        <div class="news-date">
+                            <span class="day">28</span>
+                            <span class="month">May</span>
+                        </div>
+                    </div>
+                    <div class="news-body">
+                        <h3>Yirik avtoservis korxonalari bilan yangi memorandum imzolandi</h3>
+                        <p>Avtomobillarni ta'mirlash yo'nalishi talabalari endilikda 2-kursdanoq to'g'ridan-to'g'ri zamonaviy servis markazlarida haq to'lanadigan amaliyot o'tashadi.</p>
+                        <a href="#" class="btn-read-more">Batafsil <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                
+                <div class="contact-info">
+                    <span class="section-badge">Biz bilan bog'lanish</span>
+                    <h2>Savollaringiz bormi? Bizga murojaat qiling!</h2>
+                    <p>Qabul jarayoni, kerakli hujjatlar yoki o'quv tizimi bo'yicha har qanday savollarga javob berishga tayyormiz.</p>
+                    
+                    <div class="info-links">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Manzil:</h4>
+                                <p>O'zbekiston, Namangan viloyati, Shahar: To'raqo'rg'on, Chust ko'chasi, 17</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Telefon:</h4>
+                                <p>+998 (71) 123-45-67</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>E-pochta:</h4>
+                                <p>info@1-kollej.uz</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="apply">
+                        <div class="form-group">
+                            <label for="name">Ism va Familiyangiz</label>
+                            <input type="text" id="name" placeholder="Masalan: Dilshod Aliyev" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon raqamingiz</label>
+                            <input type="tel" id="phone" placeholder="+998 (90) 123-45-67" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Murojaatingiz matni</label>
+                            <textarea id="message" rows="4" placeholder="Sizni qiziqtirgan savolni yozing..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Xabarni yuborish <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 1-son Kasb-hunar Kolleji. Barcha huquqlar himoyalangan.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript faylimizni ulaymiz -->
+    <script src="main.js"></script>
+</body>
+</html>
