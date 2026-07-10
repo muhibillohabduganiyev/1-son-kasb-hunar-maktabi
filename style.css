@@ -781,3 +781,721 @@ a {
     color: var(--white);
     transform: translateY(-2px);
 }
+/* 1. LOGOTIP STILI */
+.site-logo {
+    width: 50px; /* Logotip o'lchami, xohlasangiz o'zgartiring */
+    height: auto;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* KO'K DUMALOQ KATTA-KICHIKLIGINI CHEGARALASH */
+.blue-circle {
+    width: 280px;         /* Dumaloqning eni */
+    height: 280px;        /* Dumaloqning bo'yi (eni bilan bir xil bo'lishi shart) */
+    border-radius: 50%;   /* Rasmni mutlaqo dumaloq qiladi */
+    overflow: hidden;     /* Rasm chetga chiqib ketsa, kesib tashlaydi */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;    /* Sahifa markazida turishi uchun */
+    border: 4px solid #0056b3; /* Ko'k hoshiya (ramka) */
+}
+
+/* RASMNI DUMALOQ ICHIGA CHIROYLIK JOYLASHTIRISH */
+.circle-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* Rasm cho'zilmasdan, dumaloqni to'ldirib turadi */
+}
+
+/* 3. SAYTNING UMUMIY ORQA FONINI XIRALASHTIRIB QO'YISH */
+body {
+    position: relative;
+    background: none; /* Agar eski background bo'lsa o'chadi */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/bg-main.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15; /* Xiralik darajasi (0.1 dan 1 gacha). 0.15 - juda chiroyli va xira qiladi */
+    z-index: -1; /* Kodlar orqasida turishi uchun */
+}
+
+/* 4. HAR BIR BO'LIMGA ALOHIDA ORQA FON (Misol tariqasida) */
+section {
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.85); /* Bo'limlar orqasi oqish va sal shaffof bo'ladi */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+/* SAYT FONINI VA MATNLARINI IDEAL HOLATGA KELTIRISH */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navigatsiya menyusini chiroyli va tartibli qilish */
+nav, .navbar, header {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+
+/* MENYUNING O'ZINI STRUKTURASINI TO'G'RILASH */
+nav, .navbar {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important; /* Ortiqcha fonlarni yo'qotadi */
+}
+/* RASM KO'K DUMALOQ ICHIGA CHOK-CHOKIDAN TUSHISHI UCHUN */
+/* ORTIQCHA PAYDO BO'LGAN OQ BLOKNI VA UNING ICHIDAGI DUMALOQNI BUTUNLAY YO'QOTISH */
+.hero-section > .hero-circle-shape {
+    display: none !important;
+}
+
+/* RASMNI AYNAN O'SHA O'NG PASTKI BURCHAKDAGI KO'K AYLANANING O'ZIGA BACKROUND QILIB JONLANGAN QULFLASH */
+[class*="circle-shape"], 
+[class*="hero-circle"], 
+.hero-circle-shape {
+    background-image: url('images/main-college.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+/* MENYUNING PASTIDAGI ORTIQCHA BO'SH OQ BLOKNI BUTUNLAY YO'QOTISH */
+.hero-section {
+    background: transparent !important; /* Agar oq fon berilgan bo'lsa, uni yo'q qiladi */
+    box-shadow: none !important;        /* Agar soyasi bo'lsa, o'chiradi */
+    padding-top: 0 !important;          /* Yuqoridagi ortiqcha bo'shliqni yo'qotadi */
+    margin-top: 0 !important;           /* Menyuga taqab qo'yadi */
+}
+
+/* Agar u alohida bo'sh div element bo'lsa, uni ekrandan butunlay yashiramiz */
+.main-header + div:not(.hero-section), 
+.navbar + div {
+    display: none !important;
+}/* MENYUNI EKRAN TEPASIGA YAPISHTIRIB QO'YISH (SCROLL BO'LGANDA HAM TURADI) */
+.main-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: #ffffff !important; /* Orqasi shaffof bo'lib qolmasligi uchun */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    z-index: 9999 !important; /* Hamma bo'limlardan tepada turishi shart */
+}
+
+/* MENYU EKRAAN TEPASINI TO'SIBO'YMASLIGI UCHUN ASOSIY BO'LIMGA OZGINA MASOFA BERAMIZ */
+.hero-section {
+    margin-top: 80px !important; /* Menyuning bo'yi qancha bo'lsa shuncha joy ochadi */
+}
+/* FAOL MENYU LINKI OSTIDAGI KO'K CHIZIQ */
+.main-header .navbar ul li a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-header .navbar ul li a.active {
+    color: #0056b3 !important; /* Faol bo'lgandagi matn rangi */
+    font-weight: 600;
+}
+
+.main-header .navbar ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Chiziq matndan qancha pastda turishi */
+    left: 0;
+    width: 100%;
+    height: 3px; /* Ko'k chiziq qalinligi */
+    background-color: #0056b3; /* Ko'k chiziq rangi */
+    border-radius: 2px;
+}
+/* YO'NALISHLAR BO'LIMI STRIKTURASI */
+.courses-section {
+    padding: 60px 0;
+}
+
+.section-heading {
+    margin-top: 50px;
+    font-size: 26px;
+    padding-left: 15px;
+}
+
+.heading-9 {
+    color: #0056b3;
+    border-left: 5px solid #0056b3;
+}
+
+.heading-11 {
+    color: #27ae60;
+    border-left: 5px solid #27ae60;
+}
+
+.section-subtext {
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 15px;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+/* KORTOCHKALAR */
+.course-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-card h3 {
+    margin: 20px 0 10px;
+    font-size: 20px;
+    color: #222;
+}
+
+.course-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 70px;
+}
+
+/* KORTOCHKA RANGLARI VA CHEGARALARI */
+.card-blue { border-left: 4px solid #0056b3; }
+.card-orange { border-left: 4px solid #e67e22; }
+.card-green { border-left: 4px solid #27ae60; }
+
+/* IKONKALAR KONTENERI */
+.icon-box {
+    display: inline-block;
+    border-radius: 12px;
+}
+
+.icon-box i {
+    font-size: 24px;
+    padding: 15px;
+    display: block;
+}
+
+.icon-blue i { color: #0056b3; background: #e1f0ff; }
+.icon-orange i { color: #e67e22; background: #fff0e1; }
+.icon-green i { color: #27ae60; background: #e1ffe9; }
+
+/* PASTDAGI MA'LUMOTLAR (FOOTER) */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: #777;
+    font-size: 13px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.card-footer span i {
+    margin-right: 5px;
+}
+/* MODAL ASOSIY ORQA FON (YOPISHIB TURADIGAN OPERA) */
+.modal-overlay {
+    display: none; /* Default holatda yashirin turadi */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    backdrop-filter: blur(5px); /* Orqa fonni xira qilish */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* MODAL KARTASI */
+.modal-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto; /* Agar kontent ko'p bo'lsa, ichida skroll bo'ladi */
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ORQAGA QAYTISH TUGMASI */
+.modal-back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.modal-back-btn:hover {
+    background: #f5f5f5;
+    color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* MODAL TEPASI */
+.modal-header-image {
+    height: 120px;
+    background: linear-gradient(135deg, #0056b3 0%, #002d62 100%);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative;
+}
+
+.modal-badge {
+    position: absolute;
+    bottom: -15px;
+    left: 30px;
+    background: #007bff;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
+    box-shadow: 0 4px 10px rgba(0,123,255,0.3);
+}
+
+/* MODAL ICHIDAGI MATNLAR */
+.modal-body-content {
+    padding: 40px 30px 30px;
+}
+
+.modal-title {
+    font-size: 24px;
+    color: #111;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.modal-intro-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+    background: #f8faif;
+    padding: 15px;
+    border-radius: 12px;
+    border-left: 4px solid #0056b3;
+    margin-bottom: 25px;
+}
+
+/* MA'LUMOTLAR PANELI */
+.modal-info-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f5f7fa;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.info-item i {
+    font-size: 20px;
+    color: #0056b3;
+}
+
+.info-item span {
+    font-size: 13px;
+    color: #555;
+}
+
+.modal-divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 25px 0;
+}
+
+.docs-heading {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.docs-heading i {
+    color: #e67e22;
+    margin-right: 5px;
+}
+
+/* HUJJATLAR RO'YXATI */
+.docs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.docs-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    padding: 12px 15px;
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.docs-list li:hover {
+    transform: translateX(5px);
+    border-color: #e1f0ff;
+}
+
+.doc-num {
+    background: #e1f0ff;
+    color: #0056b3;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.doc-text {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+}
+
+.doc-icon {
+    margin-left: 5px;
+}
+/* DARK MODE TUGMASI STILI */
+.theme-switch-btn {
+    background: #f5f7fa;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #333;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+
+.theme-switch-btn:hover {
+    background: #e1f0ff;
+    color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* ================= DARK MODE YOQILGANDAGI RANGLAR ================= */
+body.dark-mode {
+    background-color: #121214 !important;
+    color: #f5f5f7 !important;
+}
+
+/* Header (Menyu qismi) */
+body.dark-mode header, 
+body.dark-mode nav {
+    background-color: #1a1a1e !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode nav a {
+    color: #ddd !important;
+}
+
+/* Kartochkalar (Yo'nalishlar va Yangiliklar uchun) */
+body.dark-mode .course-card,
+body.dark-mode .news-card,
+body.dark-mode .modal-card,
+body.dark-mode .info-item {
+    background-color: #1a1a1e !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+    border-color: #2d2d35 !important;
+}
+
+/* Sarlavhalar va matnlar qorayib qolmasligi uchun */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4,
+body.dark-mode .modal-title,
+body.dark-mode .doc-text {
+    color: #ffffff !important;
+}
+
+body.dark-mode p, 
+body.dark-mode .section-subtext,
+body.dark-mode .card-footer {
+    color: #b0b0b8 !important;
+}
+
+/* Tugma va inputlarni to'g'rilash */
+body.dark-mode .theme-switch-btn {
+    background: #2d2d35;
+    color: #ffca28; /* Oy/quyosh oltin rangda tovlanadi */
+}
+
+body.dark-mode .modal-back-btn {
+    background: #2d2d35 !important;
+    color: #fff !important;
+    border-color: #444 !important;
+}
+
+/* Silliq o'tish effekti (Animmatsiya) */
+body, header, nav, .course-card, .news-card, a, h1, h2, h3, p {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+/* ================= SYSTEM DARK MODE EFFECT (BULLETPROOF VARIANT) ================= */
+body.dark-mode {
+    background-color: #121214 !important;
+    color: #f5f5f7 !important;
+}
+
+/* 1. HAMMA BO'LIMLARNI (SECTION) MAJBURLAB QORAYTIRISH */
+body.dark-mode section, 
+body.dark-mode #about, 
+body.dark-mode #courses, 
+body.dark-mode #news, 
+body.dark-mode #contact,
+body.dark-mode .about-section,
+body.dark-mode .courses-section,
+body.dark-mode .news-section,
+body.dark-mode .contact-section {
+    background-color: #121214 !important;
+}
+
+/* 2. MENYU VA HEADER QISMI */
+body.dark-mode header, 
+body.dark-mode nav,
+body.dark-mode .navbar {
+    background-color: #1a1a1e !important;
+    border-bottom: 1px solid #2d2d35 !important;
+}
+
+body.dark-mode .navbar ul li a {
+    color: #ffffff !important;
+}
+
+/* 3. KARTOCKHALAR VA OQ BLOKLARNI TO'Q RANGGA O'TKAZISH */
+body.dark-mode .course-card,
+body.dark-mode .news-card,
+body.dark-mode .modal-card,
+body.dark-mode .info-item,
+body.dark-mode .about-box,
+body.dark-mode .contact-item,
+body.dark-mode .contact-info div { /* Aloqa bo'limidagi manzil va e-pochta bloklari */
+    background-color: #1a1a1e !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid #2d2d35 !important;
+}
+
+/* Biz haqimizda qismidagi oq statistik qutichalar */
+body.dark-mode .about-card, 
+body.dark-mode .stat-card,
+body.dark-mode nav + div {
+    background-color: #1a1a1e !important;
+    border: 1px solid #2d2d35 !important;
+}
+
+/* 4. SARLAVHALAR VA MATNLARNI KO'RINADIGAN QILISH */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4,
+body.dark-mode .modal-title,
+body.dark-mode .contact-text h4,
+body.dark-mode .about-text h2 {
+    color: #ffffff !important;
+}
+
+/* Hamma oddiy matnlar, paragraflar va linklar */
+body.dark-mode p, 
+body.dark-mode span,
+body.dark-mode .doc-text,
+body.dark-mode .contact-text a,
+body.dark-mode .contact-text span,
+body.dark-mode .about-text p {
+    color: #d1d1d6 !important;
+}
+
+/* 5. ALOQA FORMINGIZ VA INPUTLARINI TO'G'RILASH */
+body.dark-mode .contact-form, 
+body.dark-mode form {
+    background-color: #1a1a1e !important;
+    border: 1px solid #2d2d35 !important;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #252529 !important;
+    color: #ffffff !important;
+    border: 1px solid #3d3d45 !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #77777d !important;
+}
+
+/* 6. SILLIQ O'TISH ANIMATSIYASI */
+body, header, section, card, div, p, a, input, textarea, span {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+/* ================= MODAL VA ALOQA QISMINI TO'LIQ TUZATISH ================= */
+
+/* 1. Modal oyna ichidagi ro'yxat qutilarini chiroyli dumaloq qilish */
+body.dark-mode .modal-card div,
+body.dark-mode .modal-card li,
+body.dark-mode .modal-card p + div,
+body.dark-mode [id^="qabulModal"] div[style*="background-color: white"],
+body.dark-mode [id^="qabulModal"] div[style*="background: white"],
+body.dark-mode .modal-card .document-item {
+    background-color: #252529 !important;
+    background: #252529 !important;
+    color: #ffffff !important;
+    border: none !important; /* Burchakdagi xunuk ingichka chiziq olib tashlandi */
+    border-radius: 12px !important; /* Burchaklarni daxshat silliq qildik! */
+    margin-bottom: 12px !important;
+}
+
+/* Ro'yxat ichidagi matnlarni majburan oq qilish */
+body.dark-mode .modal-card span,
+body.dark-mode .modal-card li,
+body.dark-mode .modal-card p {
+    color: #ffffff !important;
+}
+
+/* 2. Aloqa bo'limidagi xunuk ramkalarni o'chirish va fonni to'g'rilash */
+body.dark-mode .contact-info .info-item,
+body.dark-mode .contact-item,
+body.dark-mode .contact-info div {
+    background-color: #1a1a1e !important;
+    border: none !important; /* Ortiqcha qora ramkalarni yo'qotamiz */
+    box-shadow: none !important;
+}
+
+/* Aloqa qismidagi matnlar atrofidagi o'sha mayda ramkalarni (border) olib tashlash */
+body.dark-mode .contact-text,
+body.dark-mode .contact-info h4,
+body.dark-mode .contact-info p,
+body.dark-mode .contact-info span,
+body.dark-mode .contact-text h4,
+body.dark-mode .contact-text a {
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    color: #ffffff !important;
+}
+
+/* Telefon raqamlar ostidagi izoh matnlari (Qabul komissiyasi va h.k.) biroz ochroq ko'rinishi uchun */
+body.dark-mode .contact-text span {
+    color: #b0b0b8 !important;
+}
+/* Modal ichidagi hujjatlar ro'yxati qutilarini to'liq yumaloq qilish */
+.modal-card ol li,
+.modal-card ul li,
+.modal-card .document-item,
+[id^="qabulModal"] li,
+[id^="qabulModal"] div[style*="background"] {
+    border-radius: 12px !important; /* Burchaklarni silliq yumaloq qiladi */
+    border: none !important;        /* Noto'g'ri chiziqlarni o'chiradi */
+}
+
+/* Agar raqamlar yozilgan dumaloqchalar ham to'rtburchak bo'lib qolgan bo'lba */
+.modal-card ol li::before,
+.modal-card .document-item span,
+[id^="qabulModal"] .number-box {
+    border-radius: 50% !important; /* Raqam turgan joyni ideal dumaloq qiladi */
+}/* ================= IKONKALARNING TO'RTBURCHAK BURCHAKLARINI YUMSHOQ QILISH ================= */
+
+/* 2. Aloqa bo'limidagi (Manzil, Telefon, E-pochta) oq ikonka qutilarini yumaloq qilish */
+body.dark-mode .contact-info .icon-wrapper,
+body.dark-mode .contact-item .icon-box,
+body.dark-mode .contact-info div[style*="background-color: white"],
+body.dark-mode .contact-info div[style*="background: white"],
+body.dark-mode .contact-info i,
+body.dark-mode .contact-info img {
+    border-radius: 12px !important; /* To'rtburchak ramkani yumshoq holatga keltiramiz */
+}
+/* ================= IKONKALARNING TO'RTBURCHAK BURCHAKLARINI YUMSHOQ QILISH ================= */
+
+/* 1. Yo'nalishlar bo'limidagi ikonka qutilarini yumaloq qilish */
+body.dark-mode .course-card .icon-box, 
+body.dark-mode .course-card div[style*="background"],
+.course-card img,
+.course-card i {
+    border-radius: 12px !important; /* Burchaklarni silliq yumaloqlaydi */
+}
+/* ================= ALOQA BLOKINI 100% MAJBURIY DUMALOQ QILISH ================= */
+
+/* Aloqa bo'limidagi (<section id="contact"> yoki .contact ichidagi) 
+   o'ng tarafda turgan formaning chapidagi barcha divlarni majburlaymiz */
+section[id*="contact"] div, 
+.contact-section div,
+.contact-info,
+[id^="contact"] .container > div > div {
+    border-radius: 16px !important;
+}
+
+/* Agar u katta blok ichida yana boshqa ichma-ich bloklar bo'lsa, ularni ham silliqlash */
+section[id*="contact"] div div {
+    border-radius: 12px !important;
+}

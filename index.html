@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
@@ -9,40 +9,49 @@
     <meta name="author" content="Muhibillo Abduganiyev"> 
     <link rel="canonical" href="https://muhibillohabduganiyev.github.io/1-son-kasb-hunar-maktabi/">
     
-    <!-- Google Fonts: Saytimiz shriftlari chiroyli chiqishi uchun -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome: Saytdagi ikonkalarni (telefon, manzil, qidiruv) chiqarish uchun -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- CSS faylimizni ulaymiz -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. HEADER: Navigatsiya (Menyu) qismi -->
     <header class="main-header">
         <div class="container">
             <div class="logo">
                 <a href="index.html">1-SON <span>KOLLEJI</span></a>
             </div>
             <nav class="navbar">
-                <ul>
-                    <li><a href="index.html" class="active">Bosh sahifa</a></li>
-                    <li><a href="#about">Biz haqimizda</a></li>
-                    <li><a href="#courses">Yo'nalishlar</a></li>
-                    <li><a href="#news">Yangiliklar</a></li>
-                    <li><a href="#contact">Aloqa</a></li>
-                </ul>
-            </nav>
-            <div class="header-buttons">
-                <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+    <ul style="display: flex; align-items: center; list-style: none; gap: 20px; margin: 0; padding: 0;">
+        <li><a href="index.html" class="active">Bosh sahifa</a></li>
+        <li><a href="#about">Biz haqimizda</a></li>
+        <li><a href="#courses">Yo'nalishlar</a></li>
+        <li><a href="#news">Yangiliklar</a></li>
+        <li><a href="#contact">Aloqa</a></li>
+        
+        <!-- TUNGI REJIM TUGMASI - MENU DAVOMIDA -->
+        <li>
+            <button id="dark-mode-toggle" style="background: #222222; color: #ffca28; border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); transition: transform 0.2s; margin-left: 10px;">
+                <i class="fas fa-moon"></i>
+            </button>
+        </li>
+    </ul>
+</nav>
                 <a href="#apply" class="btn-apply">Onlayn Ariza</a>
             </div>
         </div>
     </header>
+
+    <section class="hero-section">
+        <div class="hero-circle-shape">
+            <img src="images/main-college.jpg" alt="Kollej binosi" class="circle-img">
+        </div>
+    </section>
 
     <!-- 2. HERO SECTION: Birinchi ko'rinadigan qism (Katta banner) -->
     <section class="hero">
@@ -120,141 +129,190 @@
         </div>
     </section>
 
-    <!-- 4. COURSES SECTION: Yo'nalishlar va Kasblar -->
-    <section id="courses" class="courses-section">
-        <div class="container">
+   <!-- YO'NALISHLAR BO'LIMI -->
+<section id="courses" class="courses-section">
+    <div class="container">
+        
+        <!-- ================= 9-SINFLAR BO'LIMI ================= -->
+        <h2 class="section-heading heading-9">9-sinf bitiruvchilari uchun yo'nalishlar</h2>
+        <p class="section-subtext">Kunduzgi va Dual ta'lim shakli (3 kun o'qish, 3 kun ishlash imkoniyati)</p>
+
+        <div class="courses-grid">
             
-            <!-- Bo'lim sarlavhasi -->
-            <div class="section-header">
-                <span class="section-badge">Mutaxassisliklar</span>
-                <h2>Bizda mavjud bo'lgan ta'lim yo'nalishlari</h2>
-                <p>Kollejimizda bugungi kunda mehnat bozorida eng yuqori maoshli va talabgir bo'lgan zamonaviy kasblar o'rgatiladi.</p>
+            <!-- 1-kartochka -->
+            <div class="course-card card-blue">
+                <div class="icon-box icon-blue"><i class="fas fa-car-battery"></i></div>
+                <h3>Elektromobillarga xizmat ko'rsatish va ta'mirlash</h3>
+                <p>Elektromobillarga texnik xizmat ko'rsatish va ta'mirlash sirlarini o'rganish. O'qish BEPUL va yakunda "B" toifali haydovchilik guvohnomasi beriladi.</p>
+                <div class="card-footer">
+                    <span><i class="far fa-clock"></i> 2 yil / Kunduzgi</span>
+                    <span><i class="far fa-user"></i> Bepul / "B" Guvohnoma</span>
+                </div>
             </div>
 
-            <!-- Kasblar kartalari griddi (Grid) -->
-            <div class="courses-grid">
-                
-                <!-- 1-Karta: Dasturlash -->
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Axborot Texnologiyalari (Dasturlash)</h3>
-                    <p>Veb-saytlar va mobil ilovalar yaratish, ma'lumotlar bazasi hamda kompyuter tarmoqlari bilan ishlash asoslari.</p>
-                    <div class="course-footer">
-                        <span><i class="far fa-clock"></i> 2 yil</span>
-                        <span><i class="far fa-user"></i> Grant / Shartnoma</span>
-                    </div>
+            <!-- 2-kartochka -->
+            <div class="course-card card-blue">
+                <div class="icon-box icon-blue"><i class="fas fa-bolt"></i></div>
+                <h3>Elektr jixozlariga xizmat ko'rsatish</h3>
+                <p>Sanoat va aholi foydalanadigan elektr jihozlariga texnik xizmat ko'rsatish, nosozliklarni aniqlash va ta'mirlash ustasi yo'nalishi.</p>
+                <div class="card-footer">
+                    <span><i class="far fa-clock"></i> 2 yil / Kunduzgi</span>
+                    <span><i class="far fa-user"></i> Amaliy ustaxona</span>
                 </div>
+            </div>
 
-                <!-- 2-Karta: Avtoslesar -->
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <h3>Avtomobillarni ta'mirlash chilangari</h3>
-                    <p>Zamonaviy yengil va yuk avtomobillarining dvigatel, elektr va mexanik qismlarini diagnostika va ta'mirlash.</p>
-                    <div class="course-footer">
-                        <span><i class="far fa-clock"></i> 2 yil</span>
-                        <span><i class="far fa-user"></i> Amaliy darslar</span>
-                    </div>
+            <!-- 3-kartochka -->
+            <div class="course-card card-blue">
+                <div class="icon-box icon-blue"><i class="fas fa-laptop"></i></div>
+                <h3>Raqamli axborotlarni qayta ishlash ustasi</h3>
+                <p>Kompyuter tizimlari, ma'lumotlar bazasi bilan ishlash, raqamli hujjatlar va axborotlarni professional qayta ishlash operator-ustasi.</p>
+                <div class="card-footer">
+                    <span><i class="far fa-clock"></i> 2 yil / Kunduzgi</span>
+                    <span><i class="far fa-user"></i> Zamonaviy IT sinf</span>
                 </div>
+            </div>
 
-                <!-- 3-Karta: Buxgalteriya -->
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <h3>Buxgalteriya va Audit</h3>
-                    <p>Korxona va tashkilotlarda moliyaviy hisobotlarni yuritish, soliq tizimi va 1C dasturida ishlash ko'nikmalari.</p>
-                    <div class="course-footer">
-                        <span><i class="far fa-clock"></i> 2 yil</span>
-                        <span><i class="far fa-user"></i> 1C Dasturi</span>
-                    </div>
+            <!-- 4-kartochka (Dual) -->
+            <div class="course-card card-orange">
+                <div class="icon-box icon-orange"><i class="fas fa-car"></i></div>
+                <h3>Avtomobillarni ta'mirlash (Dual)</h3>
+                <p>Avtomobillarni ta'mirlash va ularga xizmat ko'rsatish. O'qish mutloqo BEPUL va qo'shimcha "B" toifali o'qiganlik guvohnomasi beriladi.</p>
+                <div class="card-footer">
+                    <span><i class="far fa-clock"></i> 2 yil / Dual ta'lim</span>
+                    <span><i class="far fa-user"></i> 3 kun o'qish / 3 kun ish</span>
                 </div>
+            </div>
 
-                <!-- 4-Karta: Tikuvchilik -->
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-cut"></i>
-                    </div>
-                    <h3>Tikuvchilik va Dizayn</h3>
-                    <p>Zamonaviy kiyimlarni modellashtirish, loyihalash, matolar bilan ishlash va professional tikuv uskunalaridan foydalanish.</p>
-                    <div class="course-footer">
-                        <span><i class="far fa-clock"></i> 2 yil</span>
-                        <span><i class="far fa-user"></i> Ijodiy ustaxona</span>
-                    </div>
+            <!-- 5-kartochka (Dual) -->
+            <div class="course-card card-orange">
+                <div class="icon-box icon-orange"><i class="fas fa-cut"></i></div>
+                <h3>Tikuvchilik, Oshpazlik va Savdo</h3>
+                <p>Zamonaviy kiyimlarni modellashtirish (Tikuvchi), pazandachilik sirlari (Oshpaz) hamda Sotuvchi, nazoratchi-kassir mutaxassisliklari.</p>
+                <div class="card-footer">
+                    <span><i class="far fa-clock"></i> 2 yil / Dual ta'lim</span>
+                    <span><i class="far fa-user"></i> Ijodiy amaliyot</span>
                 </div>
-
             </div>
         </div>
-    </section>
+
+
+        <!-- ================= 11-SINFLAR BO'LIMI ================= -->
+        <h2 class="section-heading heading-11">11-sinf va litsey bitiruvchilari uchun yo'nalishlar</h2>
+        <p class="section-subtext">Katta yoshdagi o‘qish istagida bo‘lgan shaxslar uchun ham dual ta'lim yo'nalishlari</p>
+
+        <div class="courses-grid">
+            
+            <!-- 6-kartochka -->
+            <div class="course-card card-green">
+                <div class="icon-box icon-green"><i class="fas fa-calculator"></i></div>
+                <h3>Buhgalteriya hisobi va audit</h3>
+                <p>Korxona va tashkilotlarda moliyaviy hisobotlarni yuritish, soliq tizimi va zamonaviy buhgalteriya dasturlarida ishlash ko'nikmalari.</p>
+                <div class="card-footer">
+                    <span><i class="far fa-clock"></i> 2 yil / Dual ta'lim</span>
+                    <span><i class="far fa-user"></i> 1C Dasturi va Audit</span>
+                </div>
+            </div>
+
+            <!-- 7-kartochka -->
+            <div class="course-card card-green">
+                <div class="icon-box icon-green"><i class="fas fa-truck-loading"></i></div>
+                <h3>Transport logistikasi (GRANT)</h3>
+                <p>Yuk tashish, transport tizimlarini boshqarish. O'qish mutloqo BEPUL (Davlat Granti) va "B" toifali haydovchilik guvohnomasi beriladi.</p>
+                <div class="card-footer">
+                    <span><i class="far fa-clock"></i> 2 yil / Davlat Granti</span>
+                    <span><i class="far fa-user"></i> Bepul / "B" Guvohnoma</span>
+                </div>
+            </div>
+
+            <!-- 8-kartochka -->
+            <div class="course-card card-green">
+                <div class="icon-box icon-green"><i class="fas fa-shield-alt"></i></div>
+                <h3>Axborot xavfsizligi va Turizm</h3>
+                <p>Tarmoq xavfsizligini ta'minlash, kiberhujumlardan himoyalanish (IT xavfsizlik) hamda Turizm sohasida xizmat ko'rsatish menejmenti yo'nalishlari.</p>
+                <div class="card-footer">
+                    <span><i class="far fa-clock"></i> 2 yil / Dual ta'lim</span>
+                    <span><i class="far fa-user"></i> IT & Sayohat</span>
+                </div>
+            </div>
+
+            <!-- 9-kartochka -->
+            <div class="course-card card-green">
+                <div class="icon-box icon-green"><i class="fas fa-plug"></i></div>
+                <h3>Elektr stansiyalari, tarmoqlari va tizimlari</h3>
+                <p>Yirik elektr stansiyalari, yuqori kuchlanishli tarmoqlar va energetika tizimlariga xizmat ko'rsatish texnik-muhandisligi mutaxassisligi.</p>
+                <div class="card-footer">
+                    <span><i class="far fa-clock"></i> 2 yil / Dual ta'lim</span>
+                    <span><i class="far fa-user"></i> Energetika tizimi</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
     <!-- 5. NEWS SECTION: Yangiliklar va E'lonlar -->
-    <section id="news" class="news-section">
-        <div class="container">
+  <section id="news" class="news-section">
+    <div class="container">
+        
+        <h2 style="text-align: center; margin-bottom: 40px; font-size: 28px; color: #111;">So'nggi yangiliklar va e'lonlar</h2>
+
+        <div class="news-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
             
-            <!-- Bo'lim sarlavhasi -->
-            <div class="section-header">
-                <span class="section-badge">Maktab hayoti</span>
-                <h2>So'nggi yangiliklar va e'lonlar</h2>
-                <p>Kollejimizda sodir bo'layotgan eng so'nggi voqealar, tadbirlar va qabul jarayoniga oid muhim ma'lumotlardan boxabar bo'ling.</p>
+            <div class="news-card" style="background: #fff; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+                <div class="custom-banner" style="height: 160px; background: linear-gradient(135deg, #0056b3 0%, #218838 100%); position: relative; padding: 20px;">
+                    <span style="background: #007bff; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; position: absolute; top: 20px; left: 20px;">E'LON</span>
+                    <span style="position: absolute; font-size: 85px; right: 15px; bottom: -10px; opacity: 0.2; transform: rotate(-15deg); user-select: none;">🎓</span>
+                    
+                    <div style="position: absolute; bottom: -20px; right: 20px; background: white; padding: 10px 15px; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 10;">
+                        <span style="display: block; font-size: 18px; font-weight: bold; color: #111; line-height: 1;">10</span>
+                        <span style="font-size: 11px; color: #777; text-transform: uppercase;">Iyun</span>
+                    </div>
+                </div>
+                <div style="padding: 40px 25px 25px 25px;">
+                    <h3 style="font-size: 19px; margin-bottom: 12px; line-height: 1.4; color: #111;">2026-2027 o'quv yili uchun qabul jarayonlari boshlandi!</h3>
+                    <p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Kollejimizga hujjat topshirish istagida bo'lgan abituriyentlar uchun onlayn va oflayn qabul tizimi ishga tushirildi. Kerakli hujjatlar ro'yxati...</p>
+                    <a href="#" id="openModalBtn" style="color: #0056b3; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Batafsil <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
 
-            <!-- Yangiliklar grid tizimi -->
-            <div class="news-grid">
-                
-                <!-- 1-Yangilik -->
-                <div class="news-card">
-                    <div class="news-image-placeholder">
-                        <span class="news-tag">E'lon</span>
-                        <div class="news-date">
-                            <span class="day">10</span>
-                            <span class="month">Iyun</span>
-                        </div>
-                    </div>
-                    <div class="news-body">
-                        <h3>2026-2027 o'quv yili uchun qabul jarayonlari boshlandi!</h3>
-                        <p>Kollejimizga hujjat topshirish istagida bo'lgan abituriyentlar uchun onlayn va oflayn qabul tizimi ishga tushirildi. Kerakli hujjatlar ro'yxati...</p>
-                        <a href="#" class="btn-read-more">Batafsil <i class="fas fa-arrow-right"></i></a>
+            <div class="news-card" style="background: #fff; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+                <div class="custom-banner" style="height: 160px; background: linear-gradient(135deg, #17a2b8 0%, #0056b3 100%); position: relative; padding: 20px;">
+                    <span style="background: #17a2b8; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; position: absolute; top: 20px; left: 20px;">TADBIR</span>
+                    <span style="position: absolute; font-size: 85px; right: 15px; bottom: -10px; opacity: 0.2; transform: rotate(-15deg); user-select: none;">💻</span>
+                    
+                    <div style="position: absolute; bottom: -20px; right: 20px; background: white; padding: 10px 15px; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 10;">
+                        <span style="display: block; font-size: 18px; font-weight: bold; color: #111; line-height: 1;">05</span>
+                        <span style="font-size: 11px; color: #777; text-transform: uppercase;">Iyun</span>
                     </div>
                 </div>
-
-                <!-- 2-Yangilik -->
-                <div class="news-card">
-                    <div class="news-image-placeholder">
-                        <span class="news-tag/special">Tadbir</span>
-                        <div class="news-date">
-                            <span class="day">05</span>
-                            <span class="month">Iyun</span>
-                        </div>
-                    </div>
-                    <div class="news-body">
-                        <h3>"Eng yaxshi yosh dasturchi" ko'rik tanlovi bo'lib o'tdi</h3>
-                        <p>Kollejimizning Axborot Texnologiyalari yo'nalishi talabalari o'rtasida ichki chempionat o'tkazildi va g'oliblar qimmatbaho sovg'alar bilan taqdirlandi.</p>
-                        <a href="#" class="btn-read-more">Batafsil <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <div style="padding: 40px 25px 25px 25px;">
+                    <h3 style="font-size: 19px; margin-bottom: 12px; line-height: 1.4; color: #111;">"Eng yaxshi yosh dasturchi" ko'rik tanlovi bo'lib o'tdi</h3>
+                    <p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Kollejimizning Axborot Texnologiyalari yo'nalishi talabalari o'rtasida ichki chempionat o'tkazildi va g'oliblar qimmatbaho sovg'alar bilan taqdirlandi.</p>
+                    <a href="#" style="color: #0056b3; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Batafsil <i class="fas fa-arrow-right"></i></a>
                 </div>
-
-                <!-- 3-Yangilik -->
-                <div class="news-card">
-                    <div class="news-image-placeholder">
-                        <span class="news-tag">Hamkorlik</span>
-                        <div class="news-date">
-                            <span class="day">28</span>
-                            <span class="month">May</span>
-                        </div>
-                    </div>
-                    <div class="news-body">
-                        <h3>Yirik avtoservis korxonalari bilan yangi memorandum imzolandi</h3>
-                        <p>Avtomobillarni ta'mirlash yo'nalishi talabalari endilikda 2-kursdanoq to'g'ridan-to'g'ri zamonaviy servis markazlarida haq to'lanadigan amaliyot o'tashadi.</p>
-                        <a href="#" class="btn-read-more">Batafsil <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
             </div>
+
+            <div class="news-card" style="background: #fff; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+                <div class="custom-banner" style="height: 160px; background: linear-gradient(135deg, #ffc107 0%, #e67e22 100%); position: relative; padding: 20px;">
+                    <span style="background: #e67e22; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; position: absolute; top: 20px; left: 20px;">HAMKORLIK</span>
+                    <span style="position: absolute; font-size: 85px; right: 15px; bottom: -10px; opacity: 0.2; transform: rotate(-15deg); user-select: none;">🤝</span>
+                    
+                    <div style="position: absolute; bottom: -20px; right: 20px; background: white; padding: 10px 15px; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 10;">
+                        <span style="display: block; font-size: 18px; font-weight: bold; color: #111; line-height: 1;">28</span>
+                        <span style="font-size: 11px; color: #777; text-transform: uppercase;">May</span>
+                    </div>
+                </div>
+                <div style="padding: 40px 25px 25px 25px;">
+                    <h3 style="font-size: 19px; margin-bottom: 12px; line-height: 1.4; color: #111;">Yirik avtoservis korxonalari bilan yangi memorandum imzolandi</h3>
+                    <p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Avtomobillarni ta'mirlash yo'nalishi talabalari endilikda 2-kursdanoq to'g'ridan-to'g'ri zamonaviy servis markazlarida haq to'lanadigan amaliyot o'taydilar.</p>
+                    <a href="#" style="color: #0056b3; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Batafsil <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="contact" class="contact-section">
         <div class="container">
@@ -273,13 +331,27 @@
                                 <p>O'zbekiston, Namangan viloyati, Shahar: To'raqo'rg'on, Chust ko'chasi, 17</p>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <h4>Telefon:</h4>
-                                <p>+998 (71) 123-45-67</p>
-                            </div>
-                        </div>
+                        <div class="contact-item" style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px;">
+                    <div class="contact-icon" style="background: #e1f0ff; color: #0056b3; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="fas fa-phone-alt" style="font-size: 18px;"></i>
+            </div>
+    
+            <div class="contact-text">
+                <h4 style="margin: 0 0 5px 0; font-size: 16px; color: #111; font-weight: 600;">Telefonlarimiz:</h4>
+    
+            <a href="tel:+998711234567" style="display: block; color: #555; text-decoration: none; font-size: 15px; margin-bottom: 3px; transition: color 0.2s;">
+                +998 (71) 123-45-67 <span style="font-size: 12px; color: #777; font-weight: normal;">(Qabul komissiyasi)</span>
+                    </a>
+        
+            <a href="tel:+998901234567" style="display: block; color: #555; text-decoration: none; font-size: 15px; margin-bottom: 3px; transition: color 0.2s;">
+                +998 (90) 123-45-67 <span style="font-size: 12px; color: #777; font-weight: normal;">(Ma'muriyat)</span>
+                    </a>
+        
+            <a href="tel:+998991234567" style="display: block; color: #555; text-decoration: none; font-size: 15px; transition: color 0.2s;">
+                +998 (99) 123-45-67 <span style="font-size: 12px; color: #777; font-weight: normal;">(Yoshlar ittifoqi)</span>
+                    </a>
+                </div>
+                  </div>
                         <div class="info-item">
                             <i class="fas fa-envelope"></i>
                             <div>
@@ -289,7 +361,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="contact-form-wrapper">
                     <form class="contact-form" id="apply">
                         <div class="form-group">
@@ -326,5 +397,155 @@
 
     <!-- JavaScript faylimizni ulaymiz -->
     <script src="main.js"></script>
+    <script>
+    const sections = document.querySelectorAll('section, header, div[id]');
+    const navLinks = document.querySelectorAll('.main-header .navbar ul li a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            // Menyuning balandligini hisobga olgan holda aniqlash
+            if (pageYOffset >= (sectionTop - 150)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current) && current !== '') {
+                link.classList.add('active');
+            }
+        });
+        
+        // Agar eng tepada bo'lsa, avtomatik "Bosh sahifa"ni faollashtirish
+        if (pageYOffset < 200) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            navLinks[0].classList.add('active');
+        }
+    });
+</script>
+<!-- QABUL ELONI MODAL OYNASI -->
+<div id="qabulModal" class="modal-overlay">
+    <div class="modal-card">
+        <!-- Tepada chapda orqaga qaytish tugmasi -->
+        <button id="closeModalBtn" class="modal-back-btn">
+            <i class="fas fa-arrow-left"></i> Orqaga qaytish
+        </button>
+
+        <div class="modal-header-image">
+            <span class="modal-badge">E'LON</span>
+        </div>
+
+        <div class="modal-body-content">
+            <h2 class="modal-title">To'raqo'rg'on tuman 1-son texnikumiga qabul boshlandi!</h2>
+            
+            <p class="modal-intro-text">
+                <i class="fas fa-info-circle" style="color: #0056b3; margin-right: 8px;"></i>
+                To'raqo'rg'on tuman 1-son texnikumiga 2026-2027-o'quv yilida umumiy o'rta ta'lim maktablarning 9, 11-sinf va akademik litsey bitiruvchilari va katta yoshdagi o‘qish istagida bo'lgan shaxslar o'qishga qabul qilinadi.
+            </p>
+
+            <div class="modal-info-bar">
+                <div class="info-item">
+                    <i class="far fa-clock"></i>
+                    <span><strong>Muddati:</strong> 2 yil</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span><strong>Shakli:</strong> Kunduzgi va Dual ta'lim</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-wallet"></i>
+                    <span><strong>Asosi:</strong> Davlat granti / Kontrakt</span>
+                </div>
+            </div>
+
+            <hr class="modal-divider">
+
+            <h3 class="docs-heading"><i class="fas fa-file-invoice"></i> Topshiriladigan kerakli hujjatlar ro'yxati:</h3>
+            
+            <ul class="docs-list">
+                <li>
+                    <span class="doc-num">1</span>
+                    <div class="doc-text"><strong>Elektron ariza.</strong> <span class="doc-icon">💻</span></div>
+                </li>
+                <li>
+                    <span class="doc-num">2</span>
+                    <div class="doc-text"><strong>Fuqarolik pasporti yoki ID karta</strong> (elektron skaner nusxasi).</div>
+                </li>
+                <li>
+                    <span class="doc-num">3</span>
+                    <div class="doc-text"><strong>Attestat yoki Diplom.</strong> Umumiy o'rta maktabning 9-11-sinfini tugatganligini tasdiqlovchi attestat nusxasi yoki o'rta maxsus kasb-hunar muassasasi diplomi (elektron skan nusxasi). <span class="doc-icon">📃</span></div>
+                </li>
+                <li>
+                    <span class="doc-num">4</span>
+                    <div class="doc-text"><strong>3х4 fotosurat.</strong> <span class="doc-icon">📷</span></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        // 1. BATAFSIL MODAL OYNASI KODI
+        const modal = document.getElementById("qabulModal");
+        const openBtn = document.getElementById("openModalBtn");
+        const closeBtn = document.getElementById("closeModalBtn");
+
+        if(openBtn && modal) {
+            openBtn.addEventListener("click", function(e) {
+                e.preventDefault();
+                modal.style.display = "flex";
+                document.body.style.overflow = "hidden";
+            });
+        }
+
+        if(closeBtn && modal) {
+            closeBtn.addEventListener("click", function() {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            });
+        }
+
+        window.addEventListener("click", function(e) {
+            if (e.target === modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+
+
+        // 2. DARK MODE KODI (ALOHIDA VA TOZA)
+        const toggleBtn = document.getElementById('dark-mode-toggle');
+        
+        if (toggleBtn) {
+            const icon = toggleBtn.querySelector('i');
+            
+            // Oldindan tanlangan rejimni tekshirish
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+                if(icon) {
+                    icon.classList.replace('fa-moon', 'fa-sun');
+                }
+            }
+
+            // Bosilganda ishlaydigan algoritm
+            toggleBtn.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                
+                if (document.body.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                    if(icon) icon.classList.replace('fa-moon', 'fa-sun');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    if(icon) icon.classList.replace('fa-sun', 'fa-moon');
+                }
+            });
+        }
+
+    });
+</script>
 </body>
-</html>

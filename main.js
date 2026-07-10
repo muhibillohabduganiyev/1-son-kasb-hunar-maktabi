@@ -4,10 +4,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('apply');
 
-    // !!! MAKTAB UCHUN SOZLAMALAR !!!
-    // Maktab xodimi o'z botini va ID sini bu yerga yozadi
-    const TELEGRAM_BOT_TOKEN = '7123456789:AAFxExampleToken'; // Bu yerga Bot token qo'yiladi
-    const TELEGRAM_CHAT_ID = '123456789'; // Bu yerga maktab direktorining yoki mas'ulning IDsi qo'yiladi
+    const TELEGRAM_BOT_TOKEN = '7123456789:AAFxExampleToken'; 
+    const TELEGRAM_CHAT_ID = '123456789'; 
 
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -17,13 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const phone = document.getElementById('phone').value;
             const message = document.getElementById('message').value;
 
-            // Telegramga boradigan xabar formati
             const text = `🔔 **Yangi Ariza (1-son Maktab Sayti)**\n\n` +
                          `👤 **Foydalanuvchi:** ${name}\n` +
                          `📞 **Telefon:** ${phone}\n` +
                          `✉️ **Xabar:** ${message}`;
 
-            // Telegram API ga so'rov yuborish
             fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
                 method: 'POST',
                 headers: {
@@ -48,5 +44,103 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error(error);
             });
         });
+    }
+});
+
+// ==========================================================================
+// DARK MODE / LIGHT MODE TIZIMI (TO'G'RILANGAN VARIANT)
+// ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+    // HTML dagi id bilan bir xil qilindi: "dark-mode-toggle"
+    const themeToggleBtn = document.getElementById("dark-mode-toggle"); 
+    
+    // Agar xotirada hech narsa bo'lmasa, standart variant "light" (oq fon) bo'ladi
+    if (!localStorage.getItem("theme")) {
+        localStorage.setItem("theme", "light");
+    }
+
+    const savedTheme = localStorage.getItem("theme");
+    const icon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
+
+    // Tekshirish va mos klassni qo'shish
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        if (icon) icon.classList.replace('fa-moon', 'fa-sun');
+    } else {
+        document.body.classList.remove("dark-mode");
+        if (icon) icon.classList.replace('fa-sun', 'fa-moon');
+    }
+
+    // Tugma bosilganda rejimni o'zgartirish algoritmi
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+                if (icon) icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                localStorage.setItem("theme", "light");
+                if (icon) icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+    }
+});
+// ==========================================================================
+// DARK MODE / LIGHT MODE TIZIMI (UNIVERSAL VARIANT)
+// ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+    // Saytdagi har qanday ehtimoliy ID yoki klass bo'yicha tugmani qidiramiz
+    const themeToggleBtn = document.getElementById("dark-mode-toggle") || 
+                           document.getElementById("theme-toggle") || 
+                           document.querySelector(".theme-toggle") ||
+                           document.querySelector("[id*='toggle']"); 
+    
+    // Agar xotirada hech narsa bo'lmasa, standart variant "light" (oq fon) bo'ladi
+    if (!localStorage.getItem("theme")) {
+        localStorage.setItem("theme", "light");
+    }
+
+    const savedTheme = localStorage.getItem("theme");
+
+    // Sahifa yuklanganda rejimni tekshirish va o'rnatish
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        updateIcon(themeToggleBtn, true);
+    } else {
+        document.body.classList.remove("dark-mode");
+        updateIcon(themeToggleBtn, false);
+    }
+
+    // Tugma bosilganda rejimni o'zgartirish
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+                updateIcon(themeToggleBtn, true);
+            } else {
+                localStorage.setItem("theme", "light");
+                updateIcon(themeToggleBtn, false);
+            }
+        });
+    } else {
+        console.error("Dark mode tugmasi topilmadi! HTML faylda tugmaning ID yoki klassini tekshiring.");
+    }
+
+    // Ikonkani almashtirish funksiyasi (xatolik bermasligi uchun xavfsiz qilingan)
+    function updateIcon(btn, isDark) {
+        if (!btn) return;
+        const icon = btn.querySelector('i') || btn;
+        if (icon && icon.classList) {
+            if (isDark) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
     }
 });
