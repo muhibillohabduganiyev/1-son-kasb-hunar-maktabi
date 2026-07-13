@@ -1,3 +1,4 @@
+
 /* ==========================================================================
    1. GLOBAL STILLAR VA O'ZGARUVCHILAR (CSS VARIABLES)
    ========================================================================== */
@@ -1498,4 +1499,538 @@ section[id*="contact"] div,
 /* Agar u katta blok ichida yana boshqa ichma-ich bloklar bo'lsa, ularni ham silliqlash */
 section[id*="contact"] div div {
     border-radius: 12px !important;
+}
+/* ==========================================================================
+   TADBIRLAR GALEREYASI VA MODAL DIZAYNI
+   ========================================================================== */
+.custom-modal {
+    display: none; /* Standart holatda yashirin turadi */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 9999;
+    overflow-y: auto;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content-wrapper {
+    background: #ffffff;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .modal-content-wrapper {
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 35px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.2s;
+}
+
+.close-modal-btn:hover {
+    color: #ff0000;
+}
+
+.modal-divider {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 20px 0;
+}
+
+body.dark-mode .modal-divider {
+    background: #333;
+}
+
+/* Alohida tadbir bloki */
+.single-event-block {
+    margin-bottom: 30px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+body.dark-mode .single-event-block {
+    background: #252525;
+}
+
+.event-header-info h3 {
+    margin: 5px 0 12px 0;
+    color: #0056b3;
+}
+
+body.dark-mode .event-header-info h3 {
+    color: #3793ff;
+}
+
+.event-date {
+    font-size: 13px;
+    color: #e67e22;
+    font-weight: bold;
+}
+
+/* Rasmlar galereyasi grid tizimi (Telefonda ham ishlaydigan variant) */
+.event-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.gallery-item {
+    background: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+body.dark-mode .gallery-item {
+    background: #333;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.gallery-item span {
+    display: block;
+    font-size: 12px;
+    margin-top: 6px;
+    color: #666;
+}
+
+body.dark-mode .gallery-item span {
+    color: #bbb;
+}
+/* ==========================================================================
+   E'LON USLUBIDAGI PREMIUM TADBIR OYNASI DIZAYNI
+   ========================================================================== */
+.modal-content-wrapper.premium-style {
+    padding: 0 !important; /* Tepa ko'k fon chetlariga yopishishi uchun */
+    overflow: hidden;
+    background: #ffffff;
+    max-width: 850px;
+    margin: 30px auto;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    border: none;
+}
+
+body.dark-mode .modal-content-wrapper.premium-style {
+    background: #1a1a1a;
+}
+
+/* E'lon oynasidagi kabi ko'k qopqoq (Header) */
+.modal-premium-header {
+    background: linear-gradient(135deg, #0073b7, #004488);
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Orqaga qaytish tugmasi */
+.modal-back-btn {
+    background: #ffffff;
+    color: #004488;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.modal-back-btn:hover {
+    transform: translateX(-3px);
+    background: #f0f0f0;
+}
+
+.header-badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.modal-body-content {
+    padding: 35px 30px;
+}
+
+.modal-subtitle {
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+body.dark-mode .modal-subtitle {
+    color: #aaa;
+}
+
+/* ==========================================================================
+   SICHQONCHA BORGENDA RASMNING BORTIB CHIQISH EFFEKTI
+   ========================================================================== */
+.gallery-item {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Silliq effekt */
+    cursor: pointer;
+    border: 1px solid #f0f0f0;
+}
+
+body.dark-mode .gallery-item {
+    background: #242424;
+    border-color: #333;
+}
+
+/* Sichqoncha kelganda bortib chiqish (Pop-out va soya) */
+.gallery-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    border-color: #0073b7;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: opacity 0.2s;
+}
+
+.gallery-item:hover img {
+    opacity: 0.95;
+}
+
+/* ==========================================================================
+   RASMNI KATALASHTIRIB KO'RSATUVCHI OYNA (LIGHTBOX) DIZAYNI
+   ========================================================================== */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    z-index: 100000; /* Eng tepada turadi */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 80%;
+    border-radius: 6px;
+    animation: zoomEffect 0.25s ease;
+}
+
+@keyframes zoomEffect {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.lightbox-close:hover {
+    color: #ff3333;
+}
+
+#lightbox-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: #ccc;
+    padding: 15px 0;
+    font-size: 16px;
+}
+/* Kalendar belgisini rasmning o'ng quyi burchagiga simmetrik joylashtirish */
+.card-image-wrapper {
+    position: relative;
+    overflow: visible; /* Kalendar biroz chiqib turishi uchun */
+}
+
+.date-badge {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    background: #ffffff;
+    padding: 8px 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    text-align: center;
+    z-index: 2;
+    min-width: 50px;
+}
+
+.date-badge .day {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+    line-height: 1;
+}
+
+.date-badge .month {
+    display: block;
+    font-size: 10px;
+    color: #888888;
+    font-weight: 600;
+    margin-top: 2px;
+}
+/* ==========================================================================
+   TADBIR KARTOCHKASI UCHUN BROWSERDA BUZILMAYDIGAN TOZA DIZAYN
+   ========================================================================== */
+
+/* ==========================================================================
+   TADBIR KARTOCHKASI - YAKUNIY STANDARTLASHTIRISH
+   ========================================================================== */
+
+/* Fonni kartochka burchaklariga to'liq moslash va chetga chiqib ketmaslik */
+.card-image-wrapper.dynamic-event-bg {
+    background: linear-gradient(135deg, #0288d1, #0d47a1) !important;
+    position: relative;
+    height: 160px;
+    width: 100%;
+    /* Burchaklar yonidagidek silliq kesilishi uchun */
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    overflow: hidden; 
+}
+
+/* Mushakbozlik foni */
+.card-image-wrapper.dynamic-event-bg::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    width: 100px;
+    height: 100px;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='rgba(255,255,255,0.25)' stroke-width='2' stroke-linecap='round'><path d='M32 10v6M32 48v6M10 32h6M48 32h6M16 16l4.24 4.24M43.76 43.76L48 48M16 48l4.24-4.24M43.76 20.24L48 16M32 24v2M32 38v2M24 32h2M38 32h2'/><circle cx='32' cy='32' r='3' fill='rgba(255,255,255,0.4)'/></svg>") no-repeat center center;
+    background-size: contain;
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+/* TADBIR yozuvini burchakdan surish va yonidagilarga moslash */
+.badge.badge-tadbir-fixed {
+    position: absolute;
+    top: 15px !important;
+    left: 15px !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(5px);
+    color: #ffffff !important;
+    padding: 5px 12px !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+    border-radius: 4px !important; /* Agar burchakli bo'lsa, yonidagiga qarab 4px yoki 20px qiling */
+    letter-spacing: 0.5px;
+}
+
+/* Kalendarni rasm chizig'iga to'g'ri joylash */
+.date-badge-fixed {
+    position: absolute;
+    bottom: 15px; /* Ichkariga, rasm burchagidan oshib ketmaydigan joyga oldik */
+    right: 15px;
+    background: #ffffff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    text-align: center;
+    z-index: 5;
+    min-width: 50px;
+}
+
+body.dark-mode .date-badge-fixed {
+    background: #242424;
+}
+
+/* Matn o'lchamlari va ranglarini yonidagilar bilan 100% bir xil majburlash */
+.news-card .card-content h3 {
+    font-size: 16px !important; /* Yonidagilar bilan bir xil o'lcham */
+    color: #222222 !important;  /* Standart to'q rang */
+    margin-bottom: 10px !important;
+    line-height: 1.4 !important;
+}
+
+body.dark-mode .news-card .card-content h3 {
+    color: #ffffff !important;
+}
+
+.news-card .card-content p {
+    font-size: 13px !important; /* Kichikroq va chiroyli matn */
+    color: #666666 !important;  /* Och kulrang */
+    line-height: 1.5 !important;
+}
+
+body.dark-mode .news-card .card-content p {
+    color: #cccccc !important;
+}
+/* ==========================================================================
+   MATNLAR VA TUGMANI YONIDAGILAR BILAN 100% BIR XIL QILISH
+   ========================================================================== */
+
+/* Kartochka ichidagi sarlavha (H3) o'lchami va rangini majburlash */
+.card h3, .card-content h3 {
+    font-size: 16px !important;       /* Shrift o'lchami aynan chetdagidek */
+    font-weight: bold !important;
+    color: #333333 !important;        /* To'q matn rangi */
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+    line-height: 1.4 !important;
+}
+
+/* Qora rejim (Dark Mode) uchun sarlavha rangi */
+body.dark-mode .card h3, body.dark-mode .card-content h3 {
+    color: #ffffff !important;
+}
+
+/* Kartochka ichidagi asosiy matn (P) o'lchami va rangini majburlash */
+.card p, .card-content p {
+    font-size: 13px !important;       /* Kichikroq va ixcham matn */
+    color: #666666 !important;        /* Ochroq kulrang */
+    line-height: 1.5 !important;
+    margin-bottom: 15px !important;
+}
+
+/* Qora rejim uchun asosiy matn rangi */
+body.dark-mode .card p, body.dark-mode .card-content p {
+    color: #cccccc !important;
+}
+
+/* "Batafsil" tugmasini ham to'liq yonidagilaridek ko'k link holatiga keltirish */
+.card .batafsil-btn, .card-content .batafsil-btn {
+    background: none !important;      /* Orqa fondagi to'q rang butunlay o'chadi */
+    border: none !important;          /* Chegaralar yo'qoladi */
+    box-shadow: none !important;       /* Soyalar yo'qoladi */
+    color: #0066cc !important;        /* Yorqin ko'k matn rangi */
+    padding: 0 !important;            /* Yonidagi ortiqcha paddinglar o'chadi */
+    font-size: 14px !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    cursor: pointer !important;
+}
+
+/* Sichqoncha borganda tugma effekti */
+.card .batafsil-btn:hover, .card-content .batafsil-btn:hover {
+    color: #0044aa !important;
+    text-decoration: underline !important;
+}
+/* TADBIR blokidagi ortiqcha to'rtburchak shadow va fonlarni tozalash */
+.card-image-wrapper.dynamic-event-bg .badge {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Matn va tugma stillarini yonidagilar bilan tenglashtirish */
+.news-card h3, .news-card p {
+    text-transform: none !important;
+}
+/* Qora rejimda mustaqil klasslar rangini avtomat to'g'rilash */
+body.dark-mode .custom-event-body h3 {
+    color: #ffffff !important;
+}
+body.dark-mode .custom-event-body p {
+    color: #cccccc !important;
+}
+body.dark-mode .date-badge-fixed {
+    background: #242424 !important;
+}
+body.dark-mode .date-badge-fixed .day {
+    color: #ffffff !important;
+}
+/* Tadbir kartochkasiga sichqoncha olib borilganda bortib chiqish effekti */
+.card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+    transition: transform 0.3s ease !important, box-shadow 0.3s ease !important;
+}
+
+/* Asl holatida ham silliq harakatlanishi uchun transition */
+.card {
+    transition: transform 0.3s ease !important, box-shadow 0.3s ease !important;
+}
+/* Menyu elementlarining umumiy stillari */
+.navbar-nav .nav-item {
+    position: relative !important;
+}
+
+.navbar-nav .nav-link {
+    position: relative !important;
+    transition: color 0.3s ease !important;
+}
+
+/* Aktiv bo'lim tagidagi ko'k chiziq (Siz aytgan ko'k chiziq effektini tiklash) */
+.navbar-nav .nav-link.active::after,
+.navbar-nav .nav-item.active .nav-link::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -5px !important; /* Chiziqning yozuvdan pastlik masofasi */
+    left: 0 !important;
+    width: 100% !important;
+    height: 3px !important; /* Ko'k chiziq qalinligi */
+    background-color: #0066cc !important; /* Sizning loyihadagi ko'k rang */
+    border-radius: 2px !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Sichqoncha olib borilganda ham chiziq paydo bo'lishi uchun (ixtiyoriy, chiroyli chiqadi) */
+.navbar-nav .nav-link:hover::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -5px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 3px !important;
+    background-color: #0066cc !important;
+    border-radius: 2px !important;
 }

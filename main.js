@@ -144,3 +144,90 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+// ==========================================================================
+// TADBIRLAR MODAL OYNASINI BOSHQARISH
+// ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+    const eventsModal = document.getElementById("events-modal");
+    const openEventsBtn = document.getElementById("open-events-btn");
+    const closeEventsModal = document.getElementById("close-events-modal");
+
+    if (openEventsBtn && eventsModal) {
+        // Oynani ochish
+        openEventsBtn.addEventListener("click", () => {
+            eventsModal.style.display = "block";
+            document.body.style.overflow = "hidden"; // Orqa fon skrol bo'lmaydi
+        });
+    }
+
+    if (closeEventsModal && eventsModal) {
+        // Oynani yopish (Iks tugmasi bilan)
+        closeEventsModal.addEventListener("click", () => {
+            eventsModal.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+    }
+
+    // Oynadan tashqariga (fonga) bosilganda ham yopish
+    window.addEventListener("click", (e) => {
+        if (e.target === eventsModal) {
+            eventsModal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    });
+});
+// ==========================================================================
+// TADBIRLAR VA RASMLARNI LIGHTBOXDA KO'RSATISH TIZIMI
+// ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+    const eventsModal = document.getElementById("events-modal");
+    const openEventsBtn = document.getElementById("open-events-btn");
+    const closeEventsModal = document.getElementById("close-events-modal");
+
+    // Oynani ochish (Bosh sahifadan)
+    if (openEventsBtn && eventsModal) {
+        openEventsBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            eventsModal.style.display = "block";
+            document.body.style.overflow = "hidden";
+        });
+    }
+
+    // Oynani yopish (Orqaga qaytish tugmasi)
+    if (closeEventsModal && eventsModal) {
+        closeEventsModal.addEventListener("click", () => {
+            eventsModal.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+    }
+
+    // LIGHTBOX - RASMNI BOSGANDA KATTA QILISH
+    const lightbox = document.getElementById("image-lightbox");
+    const lightboxImg = document.getElementById("lightbox-full-img");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const zoomableImages = document.querySelectorAll(".zoomable-img");
+    const lightboxClose = document.querySelector(".lightbox-close");
+
+    zoomableImages.forEach(img => {
+        img.addEventListener("click", () => {
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
+            lightboxCaption.innerHTML = img.alt; // Rasm tagidagi yozuv
+        });
+    });
+
+    // Katta rasmni yopish (Iks bosilganda yoki fon bosilganda)
+    if (lightboxClose) {
+        lightboxClose.addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+    }
+
+    if (lightbox) {
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox || e.target === lightboxClose) {
+                lightbox.style.display = "none";
+            }
+        });
+    }
+});

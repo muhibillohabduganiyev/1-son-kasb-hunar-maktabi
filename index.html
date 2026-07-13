@@ -42,7 +42,7 @@
         </li>
     </ul>
 </nav>
-                <a href="#apply" class="btn-apply">Onlayn Ariza</a>
+                <a href="#" id="open-ariza-btn" class="btn-online-ariza" style="text-decoration: none;">Onlayn Ariza</a>
             </div>
         </div>
     </header>
@@ -276,22 +276,83 @@
                 </div>
             </div>
 
-            <div class="news-card" style="background: #fff; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
-                <div class="custom-banner" style="height: 160px; background: linear-gradient(135deg, #17a2b8 0%, #0056b3 100%); position: relative; padding: 20px;">
-                    <span style="background: #17a2b8; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; position: absolute; top: 20px; left: 20px;">TADBIR</span>
-                    <span style="position: absolute; font-size: 85px; right: 15px; bottom: -10px; opacity: 0.2; transform: rotate(-15deg); user-select: none;">💻</span>
-                    
-                    <div style="position: absolute; bottom: -20px; right: 20px; background: white; padding: 10px 15px; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 10;">
-                        <span style="display: block; font-size: 18px; font-weight: bold; color: #111; line-height: 1;">05</span>
-                        <span style="font-size: 11px; color: #777; text-transform: uppercase;">Iyun</span>
+           <!-- O'RTADAGI TO'G'RILANGAN TADBIR KARTOCHKASI -->
+<div class="card news-card" style="background: #ffffff !important; border-radius: 12px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important; overflow: hidden !important; display: flex !important; flex-direction: column !important; width: 100% !important; box-sizing: border-box !important;">
+    
+    <div class="card-image-wrapper dynamic-event-bg" style="position: relative !important; height: 160px !important; background: linear-gradient(135deg, #0288d1, #0d47a1) !important; width: 100% !important; overflow: hidden !important;">
+        
+        <span style="position: absolute !important; top: 15px !important; left: 15px !important; background: rgba(255, 255, 255, 0.25) !important; color: #ffffff !important; padding: 5px 12px !important; font-size: 11px !important; font-weight: bold !important; border-radius: 20px !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; display: inline-block !important; line-height: 1.2 !important; border: none !important; box-shadow: none !important;">TADBIR</span>
+        
+        <div style="position: absolute !important; bottom: -10px !important; right: 15px !important; background: #ffffff !important; padding: 8px 14px !important; border-radius: 10px !important; text-align: center !important; z-index: 5 !important; min-width: 52px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important; border: 1px solid #f0f0f0 !important;">
+            <span style="display: block !important; font-size: 18px !important; font-weight: 800 !important; color: #222222 !important; line-height: 1 !important;">10</span>
+            <span style="display: block !important; font-size: 9px !important; color: #888888 !important; font-weight: 700 !important; text-transform: uppercase !important; margin-top: 2px !important;">IYUN</span>
+        </div>
+    </div>
+    
+    <div style="padding: 24px 20px 20px 20px !important; display: flex !important; flex-direction: column !important; background: #ffffff !important; box-sizing: border-box !important; flex-grow: 1 !important; justify-content: space-between !important; min-height: 190px !important;">
+        
+        <div style="display: flex !important; flex-direction: column !important; gap: 8px !important;">
+            <span style="display: block !important; font-size: 18px !important; color: #111111 !important; font-weight: 700 !important; margin: 0 !important; line-height: 1.4 !important; text-align: left !important; text-transform: none !important; letter-spacing: -0.3px !important;">
+                Kollejimizdagi rang-barang tadbirlar va unutilmas lahzalar
+            </span>
+            
+            <span style="display: block !important; font-size: 13.5px !important; color: #666666 !important; margin: 0 !important; line-height: 1.6 !important; text-align: left !important; text-transform: none !important; font-weight: 400 !important;">
+                Kollejimizda o'tkaziladigan madaniy-ma'rifiy tadbirlar, ko'rik-tanlovlar va bitiruv kechalaridan eng qaynoq fotoreportajlar hamda yorqin xotiralar to'plami.
+            </span>
+        </div>
+        
+        <div style="margin-top: 15px !important; text-align: left !important;">
+            <a href="#" id="open-events-btn" class="batafsil-btn" style="background: none !important; border: none !important; box-shadow: none !important; color: #0066cc !important; padding: 0 !important; font-size: 15px !important; font-weight: 700 !important; text-decoration: none !important; display: inline-flex !important; align-items: center !important; gap: 6px !important;">
+                Batafsil <i class="fas fa-arrow-right" style="font-size: 14px !important;"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+<div id="events-modal" class="custom-modal">
+    <div class="modal-content-wrapper premium-style">
+        <div class="modal-premium-header">
+            <button id="close-events-modal" class="modal-back-btn">
+                <i class="fas fa-arrow-left"></i> Orqaga qaytish
+            </button>
+            <span class="header-badge">TADBIRLAR</span>
+        </div>
+        
+        <div class="modal-body-content">
+            <h2>Kollej Hayoti va Tadbirlari</h2>
+            <p class="modal-subtitle">Tarixga muhrlangan eng yorqin sahifalar</p>
+            
+            <div class="single-event-block">
+                <div class="event-header-info">
+                    <span class="event-date"><i class="far fa-calendar-alt"></i> Iyun, 2023-yil</span>
+                    <h3>2023-yilgi Bitiruvchilarni Kuzatish Marosimi (Graduation 2023)</h3>
+                </div>
+                <p>Kollejimiz tarixidagi eng yorqin bitiruv kechalaridan biri! Shonli 2023-yil bitiruvchilarining tantanali diplom topshirish marosimi, ustozlar duosi, unutilmas xayrlashuv va yangi hayot ostonasiga qo'yilgan ilk qadamlar xotirasi.</p>
+                
+                <div class="event-gallery">
+                    <div class="gallery-item">
+                        <img src="images/bitiruv-1.jpg" alt="Diplom topshirish marosimi" class="zoomable-img">
+                        <span>Diplom topshirish marosimi</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/bitiruv-2.jpg" alt="Kursdoshlar bilan unutilmas lahza" class="zoomable-img">
+                        <span>Kursdoshlar bilan unutilmas lahza</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/bitiruv-3.jpg" alt="Ustozlar va bitiruvchilar" class="zoomable-img">
+                        <span>Ustozlar va bitiruvchilar</span>
                     </div>
                 </div>
-                <div style="padding: 40px 25px 25px 25px;">
-                    <h3 style="font-size: 19px; margin-bottom: 12px; line-height: 1.4; color: #111;">"Eng yaxshi yosh dasturchi" ko'rik tanlovi bo'lib o'tdi</h3>
-                    <p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Kollejimizning Axborot Texnologiyalari yo'nalishi talabalari o'rtasida ichki chempionat o'tkazildi va g'oliblar qimmatbaho sovg'alar bilan taqdirlandi.</p>
-                    <a href="#" style="color: #0056b3; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">Batafsil <i class="fas fa-arrow-right"></i></a>
-                </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div id="image-lightbox" class="lightbox-overlay">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-full-img">
+    <div id="lightbox-caption"></div>
+</div>
 
             <div class="news-card" style="background: #fff; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
                 <div class="custom-banner" style="height: 160px; background: linear-gradient(135deg, #ffc107 0%, #e67e22 100%); position: relative; padding: 20px;">
@@ -487,65 +548,349 @@
         </div>
     </div>
 </div>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
+<div id="arizaModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 10000; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; backdrop-filter: blur(4px);">
+    
+    <div style="background: #ffffff; width: 100%; max-width: 550px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: flex; flex-direction: column; max-height: 90vh; animation: zoomInAriza 0.3s ease;">
         
-        // 1. BATAFSIL MODAL OYNASI KODI
-        const modal = document.getElementById("qabulModal");
-        const openBtn = document.getElementById("openModalBtn");
-        const closeBtn = document.getElementById("closeModalBtn");
+        <div style="background: linear-gradient(135deg, #0288d1, #0d47a1); padding: 20px 24px; display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="margin: 0; color: #ffffff; font-size: 20px; font-weight: 700;">Onlayn ariza topshirish</h3>
+            <button id="close-ariza-btn" style="background: none; border: none; color: #ffffff; font-size: 24px; cursor: pointer; line-height: 1;">&times;</button>
+        </div>
+        
+        <form id="arizaForm" style="padding: 24px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; margin: 0; box-sizing: border-box;">
+            
+            <div>
+                <label style="display: block; font-size: 13.5px; font-weight: 600; color: #333333; margin-bottom: 6px;">Ism va Familiyangiz <span style="color: red;">*</span></label>
+                <input type="text" id="arizaIsm" placeholder="Masalan: To'lqinbek Karimov" required style="width: 100%; padding: 10px 12px; border: 1px solid #cccccc; border-radius: 8px; font-size: 14px; outline: none; box-sizing: border-box;">
+            </div>
+            
+            <div>
+                <label style="display: block; font-size: 13.5px; font-weight: 600; color: #333333; margin-bottom: 6px;">Telefon raqamingiz <span style="color: red;">*</span></label>
+                <input type="tel" id="arizaTel" placeholder="+998 (__) ___-__-__" required style="width: 100%; padding: 10px 12px; border: 1px solid #cccccc; border-radius: 8px; font-size: 14px; outline: none; box-sizing: border-box;">
+            </div>
+            
+            <div>
+                <label style="display: block; font-size: 13.5px; font-weight: 600; color: #333333; margin-bottom: 6px;">Yashash manzilingiz <span style="color: red;">*</span></label>
+                <input type="text" id="arizaManzil" placeholder="Viloyat, tuman, mahalla va ko'cha nomi" required style="width: 100%; padding: 10px 12px; border: 1px solid #cccccc; border-radius: 8px; font-size: 14px; outline: none; box-sizing: border-box;">
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div>
+                    <label style="display: block; font-size: 13.5px; font-weight: 600; color: #333333; margin-bottom: 6px;">O'qigan maktabingiz <span style="color: red;">*</span></label>
+                    <input type="text" id="arizaMaktab" placeholder="Masalan: 12-maktab" required style="width: 100%; padding: 10px 12px; border: 1px solid #cccccc; border-radius: 8px; font-size: 14px; outline: none; box-sizing: border-box;">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 13.5px; font-weight: 600; color: #333333; margin-bottom: 6px;">Bitirgan sinfingiz <span style="color: red;">*</span></label>
+                    <select id="arizaSinf" required style="width: 100%; padding: 10px 12px; border: 1px solid #cccccc; border-radius: 8px; font-size: 14px; outline: none; box-sizing: border-box; background-color: #fff;">
+                        <option value="" disabled selected>Tanlang</option>
+                        <option value="9">9-sinf</option>
+                        <option value="11">11-sinf</option>
+                    </select>
+                </div>
+            </div>
+            
+           <!-- Yangi fayl yuklash maydoni: -->
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 8px;">Pasport / ID-karta nusxasi (PDF, JPG, PNG) *</label>
+                <input type="file" id="filePasport" accept=".pdf, .jpg, .jpeg, .png" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 12px; background: #f9f9f9; padding: 15px; border-radius: 10px; border: 1px dashed #dddddd;">
+                <div>
+                    <label style="display: block; font-size: 13px; font-weight: 600; color: #444444; margin-bottom: 4px;">Attestat yoki diplom nusxasi (PDF, JPG) <span style="color: red;">*</span></label>
+                    <input type="file" id="fileAttestat" required accept=".pdf, .jpg, .jpeg, .png" style="font-size: 13px; width: 100%;">
+                </div>
+                
+                <div style="margin-top: 5px;">
+                    <label style="display: block; font-size: 13px; font-weight: 600; color: #444444; margin-bottom: 4px;">3x4 rasm yuklash (JPG, PNG) <span style="color: red;">*</span></label>
+                    <input type="file" id="fileRasm" required accept=".jpg, .jpeg, .png" style="font-size: 13px; width: 100%;">
+                </div>
+            </div>
+            
+            <button type="submit" id="submitArizaBtn" style="background: linear-gradient(135deg, #0288d1, #0d47a1); color: #ffffff; border: none; padding: 12px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: opacity 0.2s; margin-top: 10px; width: 100%;">Arizani jo'natish</button>
+            
+        </form>
+    </div>
+</div>
 
-        if(openBtn && modal) {
-            openBtn.addEventListener("click", function(e) {
-                e.preventDefault();
-                modal.style.display = "flex";
-                document.body.style.overflow = "hidden";
-            });
+<style>
+@keyframes zoomInAriza {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // ==========================================
+    // 1. BATAFSIL MODAL OYNASI KODI
+    // ==========================================
+    const modal = document.getElementById("qabulModal");
+    const openBtn = document.getElementById("openModalBtn");
+    const closeBtn = document.getElementById("closeModalBtn");
+
+    if (openBtn && modal) {
+        openBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden";
+        });
+    }
+
+    if (closeBtn && modal) {
+        closeBtn.addEventListener("click", function() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+    }
+
+    window.addEventListener("click", function(e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    });
+
+
+    // ==========================================
+    // 2. DARK MODE KODI
+    // ==========================================
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    
+    if (toggleBtn) {
+        const icon = toggleBtn.querySelector('i');
+        
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            if(icon) icon.classList.replace('fa-moon', 'fa-sun');
         }
 
-        if(closeBtn && modal) {
-            closeBtn.addEventListener("click", function() {
-                modal.style.display = "none";
-                document.body.style.overflow = "auto";
-            });
-        }
+        toggleBtn.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                if(icon) icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                if(icon) icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+    }
 
-        window.addEventListener("click", function(e) {
-            if (e.target === modal) {
-                modal.style.display = "none";
-                document.body.style.overflow = "auto";
+
+    // ==========================================
+    // 3. NAVBARDAGI LINKLARNI ACTIVE QILISH (SCROLLSPY)
+    // ==========================================
+    const navLinks = document.querySelectorAll('.navbar ul li a');
+    const sections = document.querySelectorAll('#about, #courses, #news, #contact');
+
+    window.addEventListener('scroll', function() {
+        let currentSectionId = "";
+        const scrollPosition = window.scrollY + 250;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < (sectionTop + sectionHeight)) {
+                currentSectionId = section.getAttribute('id');
             }
         });
 
+        if (window.scrollY < 120) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            if(navLinks[0]) navLinks[0].classList.add('active');
+            return;
+        }
 
-        // 2. DARK MODE KODI (ALOHIDA VA TOZA)
-        const toggleBtn = document.getElementById('dark-mode-toggle');
-        
-        if (toggleBtn) {
-            const icon = toggleBtn.querySelector('i');
-            
-            // Oldindan tanlangan rejimni tekshirish
-            if (localStorage.getItem('theme') === 'dark') {
-                document.body.classList.add('dark-mode');
-                if(icon) {
-                    icon.classList.replace('fa-moon', 'fa-sun');
-                }
-            }
-
-            // Bosilganda ishlaydigan algoritm
-            toggleBtn.addEventListener('click', function() {
-                document.body.classList.toggle('dark-mode');
+        if (currentSectionId) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const hrefValue = link.getAttribute('href');
                 
-                if (document.body.classList.contains('dark-mode')) {
-                    localStorage.setItem('theme', 'dark');
-                    if(icon) icon.classList.replace('fa-moon', 'fa-sun');
-                } else {
-                    localStorage.setItem('theme', 'light');
-                    if(icon) icon.classList.replace('fa-sun', 'fa-moon');
+                if (hrefValue === `#${currentSectionId}`) {
+                    link.classList.add('active');
                 }
             });
         }
-
     });
+
+
+    // ==========================================
+    // 4. ONLAYN ARIZA VA TELEGRAM INTEGRATSIYASI (YANGI VARIANT)
+    // ==========================================
+    const arizaModal = document.getElementById("arizaModal");
+    const openArizaBtn = document.getElementById("open-ariza-btn");
+    const closeArizaBtn = document.getElementById("close-ariza-btn");
+    const arizaForm = document.getElementById("arizaForm");
+    const submitBtn = document.getElementById("submitArizaBtn");
+
+    // TELEGRAM MA'LUMOTLARINGNI SHU YERGA YOZ:
+    const TELEGRAM_BOT_TOKEN = "8615561800:AAGiZ0f3AVZI_NwK3qG6zcu54L25Dj3SMfU"; 
+    const TELEGRAM_CHAT_ID = "7126399414"; 
+
+    if (openArizaBtn && arizaModal) {
+        openArizaBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            arizaModal.style.display = "flex";
+            document.body.style.overflow = "hidden";
+        });
+    }
+
+    if (closeArizaBtn && arizaModal) {
+        closeArizaBtn.addEventListener("click", function() {
+            arizaModal.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+    }
+
+    if (arizaForm) {
+        arizaForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Yuborilmoqda...";
+
+            const ism = document.getElementById("arizaIsm").value;
+            const tel = document.getElementById("arizaTel").value;
+            const manzil = document.getElementById("arizaManzil").value;
+            const maktab = document.getElementById("arizaMaktab").value;
+            const sinf = document.getElementById("arizaSinf").value;
+
+            // 3 ta faylni ham ushlab olamiz
+            const attestatFile = document.getElementById("fileAttestat").files[0];
+            const rasmFile = document.getElementById("fileRasm").files[0];
+            const pasportFile = document.getElementById("filePasport").files[0]; // Pasport fayli nusxasi
+
+            const message = `
+🔔 *YANGI ONLAYN ARIZA QABUL QILINDI!*
+━━━━━━━━━━━━━━━━━━━━
+👤 *F.I.Sh:* ${ism}
+📞 *Telefon:* ${tel}
+📍 *Manzil:* ${manzil}
+🏫 *Maktab:* ${maktab} (${sinf}-sinf bitiruvchisi)
+━━━━━━━━━━━━━━━━━━━━
+`;
+
+            fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: message,
+                    parse_mode: "Markdown"
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    // Matn muvaffaqiyatli ketsa, 3 ta faylni jo'natamiz
+                    sendTelegramFiles(attestatFile, rasmFile, pasportFile, ism);
+                } else {
+                    throw new Error("Xatolik");
+                }
+            })
+            .catch(err => {
+                alert("Xatolik yuz berdi!");
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Arizani jo'natish";
+            });
+        });
+    }
+
+
+    // ==========================================
+    // 5. MINNATDORCHILIK MODALINI BOSHQARISH
+    // ==========================================
+    const thanksModal = document.getElementById("thanksModal");
+    const closeThanksBtn = document.getElementById("closeThanksBtn");
+
+    if (closeThanksBtn && thanksModal) {
+        closeThanksBtn.addEventListener("click", function() {
+            thanksModal.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+    }
+
+    // 3 TA FAYLNI NAVBAT BILAN TELEGRAMGA YUKLASH
+    function sendTelegramFiles(attestat, rasm, pasport, ismName) {
+        const sendAttestat = new FormData();
+        sendAttestat.append("chat_id", TELEGRAM_CHAT_ID);
+        sendAttestat.append("document", attestat);
+        sendAttestat.append("caption", `📄 ${ismName} - Attestat/Diplom`);
+
+        const sendRasm = new FormData();
+        sendRasm.append("chat_id", TELEGRAM_CHAT_ID);
+        sendRasm.append("photo", rasm);
+        sendRasm.append("caption", `🖼 ${ismName} - 3x4 rasm`);
+
+        const sendPasport = new FormData();
+        sendPasport.append("chat_id", TELEGRAM_CHAT_ID);
+        sendPasport.append("document", pasport);
+        sendPasport.append("caption", `🪪 ${ismName} - Pasport/ID nusxasi`);
+
+        // 1. Attestat yuborish
+        fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendDocument`, {
+            method: "POST",
+            body: sendAttestat
+        })
+        .then(() => {
+            // 2. Rasm yuborish
+            return fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto`, {
+                method: "POST",
+                body: sendRasm
+            });
+        })
+        .then(() => {
+            // 3. Pasport yuborish
+            return fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendDocument`, {
+                method: "POST",
+                body: sendPasport
+            });
+        })
+        .then(() => {
+            muvaffaqiyatliYakunlash();
+        })
+        .catch(err => {
+            // Xatolik bo'lsa ham foydalanuvchiga muvaffaqiyat oynasini ochib beraveramiz
+            muvaffaqiyatliYakunlash();
+        });
+    }
+
+    // SKROL QULFLANIB QOLISHIDAN HIMOYA LANGAN FUNKSIYA
+    function muvaffaqiyatliYakunlash() {
+        if (arizaForm) arizaForm.reset(); 
+        if (arizaModal) arizaModal.style.display = "none"; 
+        
+        const thanksModal = document.getElementById("thanksModal");
+
+        if (thanksModal) {
+            thanksModal.style.display = "flex"; 
+            document.body.style.overflow = "hidden"; 
+        } else {
+            document.body.style.overflow = "auto"; 
+            alert("Rahmat! Kollejimizni tanlaganingiz uchun minnatdormiz! Arizangiz qabul qilindi.");
+        }
+        
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Arizani jo'natish";
+        }
+    }
+
+    // Oynadan tashqariga bosganda yopish va skrolni ochish
+    window.addEventListener("click", function(e) {
+        const thanksModal = document.getElementById("thanksModal");
+        if (e.target === arizaModal) {
+            arizaModal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+        if (thanksModal && e.target === thanksModal) {
+            thanksModal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    });
+});
 </script>
-</body>
+<script>
+   
