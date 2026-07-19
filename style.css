@@ -2034,3 +2034,41 @@ body.dark-mode .date-badge-fixed .day {
     background-color: #0066cc !important;
     border-radius: 2px !important;
 }
+/* Admin tugmasi uchun stillar */
+.admin-nav-btn {
+    padding: 8px 15px;
+    background-color: #f4f6f9;
+    color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-nav-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+/* Admin paneldagi Saytga o'tish tugmasi uchun */
+.go-to-site-btn {
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.2); /* Shaffof oq rang */
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 15px; /* Chiqish tugmasidan masofa */
+    transition: background-color 0.2s ease;
+}
+
+.go-to-site-btn:hover {
+    background-color: rgba(255, 255, 255, 0.35); /* Sichqoncha kelganda sal yorqinroq */
+    color: white;
+}

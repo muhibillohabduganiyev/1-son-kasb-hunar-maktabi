@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kollej - Admin Panel</title>
+    <!-- FontAwesome ikonkalari uchun link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: sans-serif; margin: 0; background: #f0f2f5; }
+        /* Login Box Dizayni */
+        .login-container { display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .login-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 300px; text-align: center; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        #errorMsg { color: red; display: none; margin-top: 10px; font-size: 14px; }
+        
+        /* Sidebar (Chap menyu) uchun stillar */
+        .sidebar-item:hover { background: #1e282c !important; color: white !important; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. LOGIN OYNASI -->
+    <div class="login-container" id="loginBox">
+        <div class="login-box">
+            <h2>Tizimga kirish</h2>
+            <form id="loginForm">
+                <input type="email" id="adminEmail" placeholder="Login (Email)" required>
+                <input type="password" id="adminPassword" placeholder="Parol" required>
+                <button type="submit">Kirish</button>
+            </form>
+            <p id="errorMsg">Login yoki parol noto'g'ri!</p>
+        </div>
+    </div>
+
+    <!-- 2. ASOSIY ADMIN PANEL (Boshida yashirin turadi) -->
+    <div id="adminPanel" style="display: none; width: 100%; min-height: 100vh; background: #f4f6f9;">
+        <!-- Tepadagi menyu (Navbar) -->
+        <div style="background: #007bff; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+            <h2 style="font-size: 20px; margin: 0;"><i class="fa-solid fa-gauge"></i> Kollej Boshqaruv Paneli</h2>
+            <button id="logoutBtn" style="background: #dc3545; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: 600; width: auto;">
+                <i class="fa-solid fa-right-from-bracket"></i> Chiqish
+            </button>
+            <!-- Saytga o'tish tugmasi -->
+        <a href="index.html" class="go-to-site-btn">
+            <i class="fas fa-globe"></i> Saytga o'tish
+        </a>
+        </div>
+
+        <div style="display: flex; min-height: calc(100vh - 54px);">
+            <!-- Chap tarafdagi Bo'limlar menyusi (Sidebar) -->
+            <div style="width: 260px; background: #222d32; color: #b8c7ce; padding: 20px 0;">
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li onclick="switchTab('statistika')" style="padding: 15px 20px; cursor: pointer; border-left: 4px solid #007bff; background: #1e282c; color: white;" class="sidebar-item" id="menu-statistika">
+                        <i class="fa-solid fa-chart-line" style="margin-right: 10px;"></i> 1. Statistika
+                    </li>
+                    <li onclick="switchTab('yonalishlar')" style="padding: 15px 20px; cursor: pointer; transition: 0.3s;" class="sidebar-item" id="menu-yonalishlar">
+                        <i class="fa-solid fa-graduation-cap" style="margin-right: 10px;"></i> 2. Kasb yo'nalishlari
+                    </li>
+                    <li onclick="switchTab('yangiliklar')" style="padding: 15px 20px; cursor: pointer; transition: 0.3s;" class="sidebar-item" id="menu-yangiliklar">
+                        <i class="fa-solid fa-newspaper" style="margin-right: 10px;"></i> 3. Yangiliklar
+                    </li>
+                    <li onclick="switchTab('aloqa')" style="padding: 15px 20px; cursor: pointer; transition: 0.3s;" class="sidebar-item" id="menu-aloqa">
+                        <i class="fa-solid fa-address-book" style="margin-right: 10px;"></i> 4. Aloqa sozlamalari
+                    </li>
+                </ul>
+            </div>
+
+            <!-- O'ng tarafdagi Kontent qismi -->
+            <div style="flex: 1; padding: 30px;" id="panelContent">
+                
+                <!-- 1-BO'LIM: STATISTIKA -->
+                <div id="tab-statistika" class="tab-content">
+                    <h3 style="margin-top: 0; margin-bottom: 20px; color: #333; border-bottom: 2px solid #ccc; padding-bottom: 10px;">Biz haqimizda — Statistika ko'rsatkichlari</h3>
+                    <div style="background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); max-width: 600px;">
+                        <div style="margin-bottom: 15px;">
+                            <label style="display:block; font-weight:600; margin-bottom:5px;">Bitiruvchilar soni:</label>
+                            <input type="number" id="statBitiruvchi" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px;">
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label style="display:block; font-weight:600; margin-bottom:5px;">O'qituvchilar soni:</label>
+                            <input type="number" id="statOqituvchi" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px;">
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label style="display:block; font-weight:600; margin-bottom:5px;">Kasb yo'nalishlari soni:</label>
+                            <input type="number" id="statYonalish" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label style="display:block; font-weight:600; margin-bottom:5px;">Hamkor korxonalar soni:</label>
+                            <input type="number" id="statHamkor" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px;">
+                        </div>
+                        <button onclick="saveStatistika()" style="background:#28a745; color:white; border:none; padding:12px 20px; border-radius:5px; cursor:pointer; font-weight:600; width:100%;">
+                            <i class="fa-solid fa-floppy-disk"></i> O'zgarishlarni saqlash
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2-BO'LIM: KASB YO'NALISHLARI (YANGILANGAN KO'RINISHI) -->
+<div id="tab-yonalishlar" class="tab-content" style="display: none;">
+    <h3>Kasb yo'nalishlarini boshqarish</h3>
+    <hr>
+    
+    <!-- Yangi yo'nalish qo'shish formasi -->
+    <form id="yonalishForm" style="max-width: 600px; margin-bottom: 30px; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label style="display:block; margin-bottom: 5px; font-weight: bold;">Yo'nalish nomi:</label>
+            <input type="text" id="yonalishNomi" placeholder="Masalan: Elektromobillarga xizmat ko'rsatish" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label style="display:block; margin-bottom: 5px; font-weight: bold;">Qisqacha ta'rif:</label>
+            <textarea id="yonalishTarif" placeholder="Yo'nalish haqida qisqacha ma'lumot..." required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; height: 80px; font-family: sans-serif;"></textarea>
+        </div>
+
+        <!-- YONMA-YON INPUTLAR -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+            <div class="form-group">
+                <label style="display:block; margin-bottom: 5px; font-weight: bold;">O'qish muddati / shakli:</label>
+                <input type="text" id="yonalishMuddat" placeholder="Masalan: 2 yil / Kunduzgi" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            <div class="form-group">
+                <label style="display:block; margin-bottom: 5px; font-weight: bold;">Imtiyoz / Qo'shimcha:</label>
+                <input type="text" id="yonalishImtiyoz" placeholder="Masalan: Bepul / 'B' Guvohnoma" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+            <div class="form-group">
+                <label style="display:block; margin-bottom: 5px; font-weight: bold;">Qaysi sinflar uchun?</label>
+                <select id="yonalishSinf" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    <option value="9">9-sinf bitiruvchilari uchun</option>
+                    <option value="11">11-sinf bitiruvchilari uchun</option>
+                </select>
+            </div>
+            <div class="form-group">
+    <label style="display:block; margin-bottom: 5px; font-weight: bold;">Yo'nalish ikonkasini tanlang:</label>
+    <select id="yonalishIcon" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+        <option value="fas fa-battery-full">🪫 Elektromobillar (Akkumulyator)</option>
+        <option value="fas fa-bolt">⚡ Elektr jihozlari (Chaqmoq)</option>
+        <option value="fas fa-laptop">💻 Raqamli axborotlar (Noutbuk)</option>
+        <option value="fas fa-car">🚗 Avtomobil ta'mirlash</option>
+        <option value="fas fa-scissors">✂️ Tikuvchilik / Sartaroshlik</option>
+        <option value="fas fa-calculator">🧮 Buxgalteriya / Kalkulyator</option>
+        <option value="fas fa-graduation-cap">🎓 Boshqa umumiy yo'nalishlar</option>
+    </select>
+</div>
+        </div>
+
+        <button type="submit" style="background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold;">
+            ➕ Yo'nalishni qo'shish
+        </button>
+    </form>
+
+    <!-- Qo'shilgan yo'nalishlar jadvali -->
+    <h4>Mavjud yo'nalishlar ro'yxati</h4>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 15px; background: white;">
+        
+        <thead>
+            <tr style="background: #f4f6f9; border-bottom: 2px solid #dee2e6; text-align: left;">
+                <th style="padding: 12px; color: #333;">Nomi</th>
+                <th style="padding: 12px; color: #333;">Sinf</th>
+                <th style="padding: 12px; color: #333;">Muddat / Imtiyoz</th>
+                <th style="padding: 12px; width: 100px; color: #333;">Amal</th>
+                
+            </tr>
+        </thead>
+        <tbody id="yonalishlarJadvali">
+            <!-- Dinamik ma'lumotlar -->
+        </tbody>
+        
+    </table>
+</div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK Kutubxonalari -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    
+    <!-- Bizning JS faylimiz -->
+    <script src="admin.js"></script>
+</body>
+</html>
